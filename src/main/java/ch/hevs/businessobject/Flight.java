@@ -1,5 +1,6 @@
 package ch.hevs.businessobject;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -102,7 +103,7 @@ public class Flight {
 	
 	// constructors
 	public Flight() {
-		
+		this.passengers = new ArrayList<Passenger>();
 	}
 	
 	public Flight(String flightNumber, Date date, String aircraftModel, long price) {
@@ -111,5 +112,10 @@ public class Flight {
 		this.aircraftModel=aircraftModel;
 		this.price=price;
 	}
-		
+	
+	// Helper methods
+	public void addPassenger(Passenger p) {
+		passengers.add(p);
+		p.addFlight(this);
+	}
 }

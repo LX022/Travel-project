@@ -1,9 +1,10 @@
 package ch.hevs.businessobject;
 
 
+import java.util.ArrayList;
 import java.util.List;
 
-import javax.persistence.CascadeType;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -30,7 +31,7 @@ public class Passenger {
 	
 	// constructors
 	public Passenger() {
-		
+		this.flights = new ArrayList<Flight>();
 	}
 	
 	public Passenger(Long id, String firstname, String lastname, String address, String zipcode) {
@@ -41,8 +42,12 @@ public class Passenger {
 		this.address = address;
 		this.zipcode = zipcode;
 	}
-
-
+	
+	// helper methods
+	public void addFlight(Flight f) {
+		flights.add(f);
+		f.addPassenger(this);
+	}
 	// getters setters
 	public Long getId() {
 		return id;
