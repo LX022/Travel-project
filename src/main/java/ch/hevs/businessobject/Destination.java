@@ -1,9 +1,12 @@
 package ch.hevs.businessobject;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -16,6 +19,13 @@ public class Destination {
 	private String city;
 	private String country;
 	private String airport;
+	
+	@OneToMany(mappedBy = "destinationFrom")
+	private List<Flight> flightsFrom;
+	
+	@OneToMany(mappedBy = "destinationTo")
+	private List<Flight> flightsTo;
+	
 	public long getId() {
 		return id;
 	}
@@ -40,7 +50,18 @@ public class Destination {
 	public void setAirport(String airport) {
 		this.airport = airport;
 	}
-	
+	public List<Flight> getFlightsFrom() {
+		return flightsFrom;
+	}
+	public void setFlightsFrom(List<Flight> flightsFrom) {
+		this.flightsFrom = flightsFrom;
+	}
+	public List<Flight> getFlightsTo() {
+		return flightsTo;
+	}
+	public void setFlightsTo(List<Flight> flightsTo) {
+		this.flightsTo = flightsTo;
+	}
 	
 
 }
