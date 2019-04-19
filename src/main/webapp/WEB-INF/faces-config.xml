@@ -34,7 +34,7 @@
 		<display-name>welcomeTravel.xhtml</display-name>
 		<from-view-id>/welcomeTravel.xhtml</from-view-id>
 		<navigation-case>
-			<from-outcome>#{travelBean.newPassenger}</from-outcome>
+			<from-outcome>bookFly</from-outcome>
 			<to-view-id>/bookFly.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
@@ -42,7 +42,7 @@
 		<display-name>welcomeTravel.xhtml</display-name>
 		<from-view-id>/welcomeTravel.xhtml</from-view-id>
 		<navigation-case>
-			<from-outcome>#{travelBean.newBooking}</from-outcome>
+			<from-outcome>createPassenger</from-outcome>
 			<to-view-id>/createPassenger.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
