@@ -9,7 +9,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToMany;
-import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -25,7 +24,7 @@ public class Passenger {
 	private String zipcode;
 
 	// relations
-	@ManyToMany/*(mappedBy="passengers")*/
+	@ManyToMany(mappedBy="passengers")
 	private List<Flight> flights;
 
 	

@@ -20,11 +20,15 @@ public class Destination {
 	private String country;
 	private String airport;
 	
+	//RELATIONS
+	
 	@OneToMany(mappedBy = "destinationFrom")
 	private List<Flight> flightsFrom;
 	
 	@OneToMany(mappedBy = "destinationTo")
 	private List<Flight> flightsTo;
+	
+	//GETTERS AND SETTERS
 	
 	public long getId() {
 		return id;
