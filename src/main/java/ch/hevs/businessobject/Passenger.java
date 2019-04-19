@@ -28,7 +28,7 @@ public class Passenger {
 	private List<Flight> flights;
 
 	
-	// CONSTRUCTORS
+	// constructors
 	public Passenger() {
 		
 	}
@@ -43,7 +43,7 @@ public class Passenger {
 	}
 
 
-	// GETTERS AND SETTERS
+	// getters setters
 	public Long getId() {
 		return id;
 	}
@@ -83,9 +83,5 @@ public class Passenger {
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
-	
-
-	
-	
 
 }

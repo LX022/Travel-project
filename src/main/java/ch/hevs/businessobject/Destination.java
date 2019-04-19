@@ -20,16 +20,14 @@ public class Destination {
 	private String country;
 	private String airport;
 	
-	//RELATIONS
-	
+	// relations	
 	@OneToMany(mappedBy = "destinationFrom")
 	private List<Flight> flightsFrom;
 	
 	@OneToMany(mappedBy = "destinationTo")
 	private List<Flight> flightsTo;
 	
-	//GETTERS AND SETTERS
-	
+	// getters setters
 	public long getId() {
 		return id;
 	}
@@ -67,5 +65,15 @@ public class Destination {
 		this.flightsTo = flightsTo;
 	}
 	
+	// constructors
+	public Destination() {
+	}
+	
+	public Destination(String city, String country,String airport) {
+		this.city=city;
+		this.country=country;
+		this.airport=airport;
+	}
+
 
 }

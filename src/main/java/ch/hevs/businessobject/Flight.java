@@ -23,6 +23,7 @@ public class Flight {
 	private String aircraftModel;
 	private long price;
 	
+	// relations
 	@ManyToOne
 	@JoinColumn(name = "FK_DESTINATION_FROM")
 	private Destination destinationFrom;
@@ -34,6 +35,7 @@ public class Flight {
 	@ManyToMany
 	private List<Passenger> passengers;
 
+	// getters setters
 	public List<Passenger> getPassengers() {
 		return passengers;
 	}
@@ -98,4 +100,16 @@ public class Flight {
 		this.destinationTo = destinationTo;
 	}
 	
+	// constructors
+	public Flight() {
+		
+	}
+	
+	public Flight(String flightNumber, Date date, String aircraftModel, long price) {
+		this.flightNumber=flightNumber;
+		this.date=date;
+		this.aircraftModel=aircraftModel;
+		this.price=price;
+	}
+		
 }
