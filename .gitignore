@@ -13,3 +13,4 @@ local.properties
 .settings/
 .loadpath
 /target/
+target/m2e-wtp/web-resources/META-INF/maven/TP12-WEB-EJB-PC-EPC-E/TP12-WEB-EJB-PC-EPC-E/pom.properties
