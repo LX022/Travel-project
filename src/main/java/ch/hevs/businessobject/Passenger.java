@@ -28,26 +28,6 @@ public class Passenger {
 	@ManyToMany(mappedBy="passengers")
 	private List<Flight> flights;
 
-	
-	// constructors
-	public Passenger() {
-		this.flights = new ArrayList<Flight>();
-	}
-	
-	public Passenger(Long id, String firstname, String lastname, String address, String zipcode) {
-		super();
-		this.id = id;
-		this.firstname = firstname;
-		this.lastname = lastname;
-		this.address = address;
-		this.zipcode = zipcode;
-	}
-	
-	// helper methods
-	public void addFlight(Flight f) {
-		flights.add(f);
-		f.addPassenger(this);
-	}
 	// getters setters
 	public Long getId() {
 		return id;
@@ -87,6 +67,26 @@ public class Passenger {
 
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
+	}
+	
+	// constructors
+	public Passenger() {
+		this.flights = new ArrayList<Flight>();
+	}
+	
+	public Passenger(Long id, String firstname, String lastname, String address, String zipcode) {
+		super();
+		this.id = id;
+		this.firstname = firstname;
+		this.lastname = lastname;
+		this.address = address;
+		this.zipcode = zipcode;
+	}
+	
+	// helper methods
+	public void addFlight(Flight f) {
+		flights.add(f);
+		f.addPassenger(this);
 	}
 
 }
