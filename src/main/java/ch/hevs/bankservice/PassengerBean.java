@@ -15,7 +15,8 @@ public class PassengerBean implements Passenger{
 	@Override
 	public List<Passenger> getPassengers() {
 		// TODO Auto-generated method stub
-		return null;
+		return em.createQuery("FROM Passenger").getResultList();
+		 
 	}
 
 
