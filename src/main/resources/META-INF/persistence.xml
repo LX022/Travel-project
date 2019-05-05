@@ -7,10 +7,17 @@
 
 	<persistence-unit name="TravelPU">
 		<jta-data-source>java:/labsDS</jta-data-source>
+
+		<class>ch.hevs.businessobject.Airport</class>
+		<class>ch.hevs.businessobject.Arrival</class>
+		<class>ch.hevs.businessobject.Departure</class>
+		<class>ch.hevs.businessobject.Flight</class>
+		<class>ch.hevs.businessobject.Passenger</class>
+
 		<properties>
 			<property name="hibernate.hbm2ddl.auto" value="update" />
-			<property name="hibernate.show_sql" value="true" /> 
-			<property name="dialect" value="org.hibernate.dialect.HSQLDialect"/>
+			<property name="hibernate.show_sql" value="true" />
+			<property name="dialect" value="org.hibernate.dialect.HSQLDialect" />
 
 		</properties>
 	</persistence-unit>
