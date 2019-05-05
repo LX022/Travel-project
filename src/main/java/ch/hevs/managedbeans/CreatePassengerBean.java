@@ -1,17 +1,8 @@
 package ch.hevs.managedbeans;
 
-import java.util.ArrayList;
-import java.util.List;
-
 import javax.annotation.PostConstruct;
-import javax.faces.event.ValueChangeEvent;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
-
-import ch.hevs.bankservice.Bank;
-import ch.hevs.bankservice.CustomerDirectory;
-import ch.hevs.businessobject.Account;
-import ch.hevs.businessobject.Client;
 import ch.hevs.businessobject.Passenger;
 
 /**
@@ -27,7 +18,7 @@ public class CreatePassengerBean
 	private String address;
 	private String zipcode;
     private String creationResult;
-	private CustomerDirectory customerDirectory;
+	private Passenger passengers;
 
     
     @PostConstruct
@@ -35,7 +26,7 @@ public class CreatePassengerBean
     	
     	// use JNDI to inject reference to bank EJB
     	InitialContext ctx = new InitialContext();
-    	customerDirectory = (CustomerDirectory) ctx.lookup("java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/PassengerBean!ch.hevs.bankservice.Passenger");    	
+    	passengers = (Passenger) ctx.lookup("java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/PassengerBean!ch.hevs.bankservice.Passenger");    	
 			
 	
 		// initialize account descriptions
@@ -54,7 +45,7 @@ public class CreatePassengerBean
     		p.setAddress(address);
     		p.setZipcode(zipcode);
     		
-    		customerDirectory.createPassenger(p);
+    		//customerDirectory.createPassenger(p);
     		this.creationResult ="Success!";
 
     	} catch (Exception e) {

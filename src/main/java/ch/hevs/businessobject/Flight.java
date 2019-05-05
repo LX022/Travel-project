@@ -25,14 +25,15 @@ public class Flight {
 	private long price;
 	
 	// relations
-	@ManyToOne
-	@JoinColumn(name = "FK_DESTINATION_FROM")
-	private Destination destinationFrom;
 	
 	@ManyToOne
-	@JoinColumn(name = "FK_DESTINATION_TO")
-	private Destination destinationTo;
+	@JoinColumn(name = "FK_DEPARTURE")
+	private Departure departure;
 	
+	@ManyToOne
+	@JoinColumn(name = "FK_ARRIVAL")
+	private Arrival arrival;
+		
 	@ManyToMany
 	private List<Passenger> passengers;
 
@@ -85,20 +86,20 @@ public class Flight {
 		this.price = price;
 	}
 
-	public Destination getDestinationFrom() {
-		return destinationFrom;
+	public Departure getDepartureFlights() {
+		return departure;
 	}
 
-	public void setDestinationFrom(Destination destinationFrom) {
-		this.destinationFrom = destinationFrom;
+	public void setDepartureFlights(Departure departure) {
+		this.departure = departure;
 	}
 
-	public Destination getDestinationTo() {
-		return destinationTo;
+	public Arrival getArrivalFlight() {
+		return arrival;
 	}
 
-	public void setDestinationTo(Destination destinationTo) {
-		this.destinationTo = destinationTo;
+	public void setArrivalFlight(Arrival arrival) {
+		this.arrival = arrival;
 	}
 	
 	// constructors
