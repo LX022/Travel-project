@@ -74,9 +74,8 @@ public class Passenger {
 		this.flights = new ArrayList<Flight>();
 	}
 	
-	public Passenger(Long id, String firstname, String lastname, String address, String zipcode) {
-		super();
-		this.id = id;
+	public Passenger(String firstname, String lastname, String address, String zipcode) {
+
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.address = address;
