@@ -6,6 +6,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import ch.hevs.businessobject.Arrival;
 import ch.hevs.businessobject.Departure;
 import ch.hevs.businessobject.Flight;
 import ch.hevs.businessobject.Passenger;
@@ -17,13 +18,13 @@ public class TravelBean implements Travel{
 	@PersistenceContext(name = "TravelPU")
 
 	@Override
-	public List<Departure> getDestinations() {
+	public List<Departure> getDepartures() {
 		// TODO Auto-generated method stub
 		return em.createQuery("SELECT FROM Destination").getResultList();
 	}
 
 	@Override
-	public List<Flight> getFlightsFromDepartureAndDestination(Departure from, Departure to) {
+	public List<Flight> getFlightsFromDepartureAndArrival(Departure from, Arrival to) {
 		// TODO Auto-generated method stub
 		Query query = em.createQuery("SELECT d.destinations FROM Destination d where d.country=:from AND d.country=:to");
 		query.setParameter("from", from).getResultList();
@@ -42,6 +43,42 @@ public class TravelBean implements Travel{
 	public void createPassenger(Passenger newPassenger) throws Exception {
 		// TODO Auto-generated method stub
 		em.persist(newPassenger);
+	}
+
+	@Override
+	public List<Arrival> getArrivals() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public List<Flight> getFlights() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+	@Override
+	public void removePassenger(Passenger deletePassenger) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void createFlight(Flight newFlight) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void createDeparture(Departure newDeparture) throws Exception {
+		// TODO Auto-generated method stub
+		
+	}
+
+	@Override
+	public void createArrival(Arrival newArrival) throws Exception {
+		// TODO Auto-generated method stub
+		
 	}
 	
 

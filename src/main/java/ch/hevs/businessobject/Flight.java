@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -26,15 +27,15 @@ public class Flight {
 	
 	// relations
 	
-	@ManyToOne
+	@ManyToOne(cascade= CascadeType.PERSIST)
 	@JoinColumn(name = "FK_DEPARTURE")
 	private Departure departure;
 	
-	@ManyToOne
+	@ManyToOne(cascade= CascadeType.PERSIST)
 	@JoinColumn(name = "FK_ARRIVAL")
 	private Arrival arrival;
 		
-	@ManyToMany
+	@ManyToMany(cascade= CascadeType.PERSIST)
 	private List<Passenger> passengers;
 
 	// getters setters

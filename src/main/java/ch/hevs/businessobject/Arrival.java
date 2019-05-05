@@ -2,6 +2,7 @@ package ch.hevs.businessobject;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
@@ -12,7 +13,7 @@ public class Arrival extends Airport{
 	
 	
 	// relations	
-	@OneToMany(mappedBy = "arrival")
+	@OneToMany(mappedBy = "arrival", cascade= CascadeType.PERSIST)
 	private List<Flight> flights;
 
 
