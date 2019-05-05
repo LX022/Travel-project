@@ -13,6 +13,8 @@ import javax.persistence.Table;
 @Table(name="Departure")
 public class Departure extends Airport{
 	
+	private String gate;
+	
 	// relations	
 	@OneToMany(mappedBy = "departure")
 	private List<Flight> flights;
@@ -25,8 +27,22 @@ public class Departure extends Airport{
 		this.flights = flights;
 	}
 	
+	
+	
+	public String getGate() {
+		return gate;
+	}
+	public void setGate(String gate) {
+		this.gate = gate;
+	}
 	// constructors
 	public Departure() {
 	}
+	public Departure(String gate, String iata, String city, String country) {
+		super(iata, city, country);
+		this.gate = gate;
+	}
+	
+	
 	
 }

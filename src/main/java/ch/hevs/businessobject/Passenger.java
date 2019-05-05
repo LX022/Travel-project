@@ -21,7 +21,7 @@ public class Passenger {
 	private Long id;
 	private String firstname;
 	private String lastname;	
-	private String address;
+	private String city;
 	private String zipcode;
 
 	// relations
@@ -53,12 +53,12 @@ public class Passenger {
 		this.lastname = lastname;
 	}
 
-	public String getAddress() {
-		return address;
+	public String getCity() {
+		return city;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public void setcity(String city) {
+		this.city = city;
 	}
 
 	public String getZipcode() {
@@ -69,23 +69,32 @@ public class Passenger {
 		this.zipcode = zipcode;
 	}
 	
+		
+	public List<Flight> getFlights() {
+		return flights;
+	}
+
+	public void setFlights(List<Flight> flights) {
+		this.flights = flights;
+	}
+
 	// constructors
 	public Passenger() {
 		this.flights = new ArrayList<Flight>();
 	}
 	
-	public Passenger(String firstname, String lastname, String address, String zipcode) {
-
+	public Passenger(String firstname, String lastname, String city, String zipcode) {
 		this.firstname = firstname;
 		this.lastname = lastname;
-		this.address = address;
+		this.city = city;
 		this.zipcode = zipcode;
+		this.flights = new ArrayList <Flight>();
 	}
 	
 	// helper methods
 	public void addFlight(Flight f) {
 		flights.add(f);
-		f.addPassenger(this);
+		f.getPassengers().add(this);
 	}
 
 }

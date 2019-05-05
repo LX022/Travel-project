@@ -15,7 +15,7 @@ public class CreatePassengerBean
 
 	private String firstname;
 	private String lastname;	
-	private String address;
+	private String city;
 	private String zipcode;
     private String creationResult;
 	private Passenger passengers;
@@ -32,7 +32,7 @@ public class CreatePassengerBean
 		// initialize account descriptions
 		this.firstname = "mon prénom";
 		this.lastname = "mon nom de famille";
-		this.address = "mon adresse";
+		this.city = "mon adresse";
 		this.zipcode = "mon zip code";
     }
     
@@ -42,7 +42,7 @@ public class CreatePassengerBean
     		Passenger p = new Passenger();
     		p.setFirstname(firstname);
     		p.setLastname(lastname);
-    		p.setAddress(address);
+    		p.setcity(city);
     		p.setZipcode(zipcode);
     		
     		//customerDirectory.createPassenger(p);
@@ -73,11 +73,11 @@ public class CreatePassengerBean
 	}
 
 	public String getAddress() {
-		return address;
+		return city;
 	}
 
 	public void setAddress(String address) {
-		this.address = address;
+		this.city = address;
 	}
 
 	public String getZipcode() {
@@ -87,9 +87,5 @@ public class CreatePassengerBean
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
-    
-    
-
-        
     
 }

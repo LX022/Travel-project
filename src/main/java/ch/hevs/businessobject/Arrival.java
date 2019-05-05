@@ -10,8 +10,6 @@ import javax.persistence.Table;
 @Table(name="Arrival")
 public class Arrival extends Airport{
 	
-	private boolean finalDestination;
-	
 	
 	// relations	
 	@OneToMany(mappedBy = "arrival")
@@ -25,21 +23,13 @@ public class Arrival extends Airport{
 		this.flights = flights;
 	}
 	
-	
-	// getters setters
-	public boolean isFinalDestination() {
-		return finalDestination;
-	}
-	public void setFinalDestination(boolean finalDestination) {
-		this.finalDestination = finalDestination;
-	}
-	
+		
 	// constructors
 	public Arrival() {
 	}
 	
-	public Arrival(boolean finalDestination) {
-		this.finalDestination = finalDestination;
+	public Arrival(String iata, String city, String country) {
+		super(iata, city, country);
 	}
 	
 }

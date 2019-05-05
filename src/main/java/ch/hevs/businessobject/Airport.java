@@ -14,7 +14,6 @@ public class Airport {
 	@Id
 	@GeneratedValue(strategy = GenerationType.SEQUENCE)
 	private Long id;
-	private String name;
 	private String iata;
 	private String city;
 	private String country;
@@ -25,12 +24,7 @@ public class Airport {
 	public void setId(Long id) {
 		this.id = id;
 	}
-	public String getName() {
-		return name;
-	}
-	public void setName(String name) {
-		this.name = name;
-	}
+
 	public String getIata() {
 		return iata;
 	}
@@ -54,9 +48,7 @@ public class Airport {
 		
 	}
 	
-	public Airport(String name, String iata, String city, String country) {
-		super();
-		this.name = name;
+	public Airport(String iata, String city, String country) {
 		this.iata = iata;
 		this.city = city;
 		this.country = country;

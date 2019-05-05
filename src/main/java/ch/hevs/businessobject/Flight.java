@@ -112,11 +112,13 @@ public class Flight {
 		this.date=date;
 		this.aircraftModel=aircraftModel;
 		this.price=price;
+		passengers = new ArrayList<Passenger>();
 	}
 	
 	// Helper methods
 	public void addPassenger(Passenger p) {
 		passengers.add(p);
-		p.addFlight(this);
+		p.getFlights().add(this);
+		
 	}
 }
