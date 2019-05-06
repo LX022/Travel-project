@@ -36,7 +36,7 @@ public class TravelBean implements Travel{
 	@Override
 	public List<Passenger> getPassengers() {
 		// TODO Auto-generated method stub
-		return em.createQuery("FROM Passenger").getResultList();
+		return em.createQuery("SELECT FROM Passenger").getResultList();
 	}
 
 	@Override
@@ -48,14 +48,15 @@ public class TravelBean implements Travel{
 	@Override
 	public List<Arrival> getArrivals() {
 		// TODO Auto-generated method stub
-		return null;
+		return em.createQuery("SELECT FROM Arrival").getResultList();
 	}
 
 	@Override
 	public List<Flight> getFlights() {
 		// TODO Auto-generated method stub
-		return null;
+		return em.createQuery("SELECT FROM Flight").getResultList();
 	}
+	
 
 	@Override
 	public void removePassenger(Passenger deletePassenger) throws Exception {
@@ -66,19 +67,19 @@ public class TravelBean implements Travel{
 	@Override
 	public void createFlight(Flight newFlight) throws Exception {
 		// TODO Auto-generated method stub
-		
+		em.persist(newFlight);
 	}
 
 	@Override
 	public void createDeparture(Departure newDeparture) throws Exception {
 		// TODO Auto-generated method stub
-		
+		em.persist(newDeparture);
 	}
 
 	@Override
 	public void createArrival(Arrival newArrival) throws Exception {
 		// TODO Auto-generated method stub
-		
+		em.persist(newArrival);
 	}
 	
 
