@@ -2,6 +2,8 @@ package ch.hevs.travelservice;
 
 import java.util.List;
 
+import javax.ejb.Stateful;
+import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
@@ -11,7 +13,7 @@ import ch.hevs.businessobject.Departure;
 import ch.hevs.businessobject.Flight;
 import ch.hevs.businessobject.Passenger;
 
-
+@Stateless
 public class TravelBean implements Travel{
 	
 	private EntityManager em;
