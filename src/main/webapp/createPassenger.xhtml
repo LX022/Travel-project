@@ -12,9 +12,21 @@
         	<h:outputLabel value="createPassenger:"></h:outputLabel>
         	<br></br>
         	<h:panelGrid columns="5">
+        	
+        	<h:outputText value="Prénom : "></h:outputText>
+            <h:inputText value="#{CreatePassengerBean.firstname}" maxlength="20" style="width: 40px;"></h:inputText>
+            
+            <h:outputText value="Nom : "></h:outputText>
+            <h:inputText value="#{CreatePassengerBean.lastname}" maxlength="20" style="width: 40px;"></h:inputText>     
+                 
+            <h:outputText value="Ville : "></h:outputText>
+            <h:inputText value="#{CreatePassengerBean.city}" maxlength="20" style="width: 40px;"></h:inputText>        
+            
+            <h:outputText value="Code postal : "></h:outputText>
+            <h:inputText value="#{CreatePassengerBean.zipcode}" maxlength="20" style="width: 40px;"></h:inputText>
 
         	</h:panelGrid>
-     		<h:commandButton value="transfer" action="#{transferBean.performTransfer}"></h:commandButton>
+     		<h:commandButton value="transfer" action="#{CreatePassengerBean.createPassenger}"></h:commandButton>
         </h:form>
     </ui:define>
 </ui:composition>

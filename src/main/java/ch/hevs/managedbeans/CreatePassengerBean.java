@@ -4,6 +4,7 @@ import javax.annotation.PostConstruct;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 import ch.hevs.businessobject.Passenger;
+import ch.hevs.travelservice.Travel;
 
 /**
  * TransferBean.java
@@ -18,7 +19,7 @@ public class CreatePassengerBean
 	private String city;
 	private String zipcode;
     private String creationResult;
-	private Passenger passengers;
+	private Travel travel;
 
     
     @PostConstruct
@@ -26,7 +27,7 @@ public class CreatePassengerBean
     	
     	// use JNDI to inject reference to bank EJB
     	InitialContext ctx = new InitialContext();
-    	passengers = (Passenger) ctx.lookup("java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/PassengerBean!ch.hevs.bankservice.Passenger");    	
+    	travel = (Travel) ctx.lookup("java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/TravelBean!ch.hevs.travelservice.Travel");    	
 			
 	
 		// initialize account descriptions
@@ -39,14 +40,24 @@ public class CreatePassengerBean
     public String createPassenger() {
     	
     	try {
-    		Passenger p = new Passenger();
+    		/*Passenger p = new Passenger();
     		p.setFirstname(firstname);
     		p.setLastname(lastname);
     		p.setcity(city);
-    		p.setZipcode(zipcode);
+    		p.setZipcode(zipcode);*/
+    		
+    		Passenger p = new Passenger();
+    		p.setFirstname("Yann");
+    		p.setLastname("Clavien");
+    		p.setcity("Montana");
+    		p.setZipcode("3960");
+    		
+    		
     		
     		//customerDirectory.createPassenger(p);
     		this.creationResult ="Success!";
+    		travel.createPassenger(p);
+    		
 
     	} catch (Exception e) {
     		e.printStackTrace();

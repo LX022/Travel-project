@@ -46,5 +46,13 @@
 			<to-view-id>/createPassenger.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+		<navigation-rule>
+		<display-name>createPassenger.xhtml</display-name>
+		<from-view-id>/createPassenger.xhtml</from-view-id>
+		<navigation-case>
+			<from-outcome>#{travelBean.createPassenger}</from-outcome>
+			<to-view-id>/showCreatePassengerResult.xhtml</to-view-id>
+		</navigation-case>
+	</navigation-rule>
 
 </faces-config>
