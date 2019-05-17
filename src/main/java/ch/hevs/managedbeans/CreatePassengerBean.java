@@ -96,5 +96,15 @@ public class CreatePassengerBean
 	public void setZipcode(String zipcode) {
 		this.zipcode = zipcode;
 	}
+
+	public String getCreationResult() {
+		return creationResult;
+	}
+
+	public void setCreationResult(String creationResult) {
+		this.creationResult = creationResult;
+	}
     
+	
+	
 }
