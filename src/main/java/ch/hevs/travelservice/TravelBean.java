@@ -2,7 +2,6 @@ package ch.hevs.travelservice;
 
 import java.util.List;
 
-import javax.ejb.Stateful;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
@@ -13,11 +12,13 @@ import ch.hevs.businessobject.Departure;
 import ch.hevs.businessobject.Flight;
 import ch.hevs.businessobject.Passenger;
 
+
 @Stateless
 public class TravelBean implements Travel{
 	
-	private EntityManager em;
+	
 	@PersistenceContext(name = "TravelPU")
+	private EntityManager em;
 
 	@Override
 	public List<Departure> getDepartures() {
@@ -83,6 +84,8 @@ public class TravelBean implements Travel{
 		// TODO Auto-generated method stub
 		em.persist(newArrival);
 	}
+
+	
 	
 
 
