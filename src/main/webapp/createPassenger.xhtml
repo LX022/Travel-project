@@ -13,20 +13,30 @@
         	<br></br>
         	<h:panelGrid columns="5">
         	
-        	<h:outputText value="Prénom : "></h:outputText>
-            <h:inputText value="#{CreatePassengerBean.firstname}" maxlength="20" style="width: 40px;"></h:inputText>
+
+        	<h:outputText value="Prénom : "></h:outputText>     
+<h:inputText value="#{createPassengerBean.firstname}" maxlength="20" style="width: 40px;"></h:inputText>
+
+        	
+        	
+
+            <br />
             
             <h:outputText value="Nom : "></h:outputText>
-            <h:inputText value="#{CreatePassengerBean.lastname}" maxlength="20" style="width: 40px;"></h:inputText>     
+            <h:inputText value="#{createPassengerBean.lastname}" maxlength="20" style="width: 40px;"></h:inputText> 
+            <br />    
                  
             <h:outputText value="Ville : "></h:outputText>
-            <h:inputText value="#{CreatePassengerBean.city}" maxlength="20" style="width: 40px;"></h:inputText>        
+            <h:inputText value="#{createPassengerBean.city}" maxlength="20" style="width: 40px;"></h:inputText>    
+            <br />    
             
             <h:outputText value="Code postal : "></h:outputText>
-            <h:inputText value="#{CreatePassengerBean.zipcode}" maxlength="20" style="width: 40px;"></h:inputText>
+            <h:inputText value="#{createPassengerBean.zipcode}" maxlength="20" style="width: 40px;"></h:inputText>
+            <br />
 
         	</h:panelGrid>
-     		<h:commandButton value="transfer" action="#{CreatePassengerBean.createPassenger}"></h:commandButton>
+     		<h:commandButton value="transfer" action="#{createPassengerBean.createPassenger}"></h:commandButton>
+     		<br />
         </h:form>
     </ui:define>
 </ui:composition>

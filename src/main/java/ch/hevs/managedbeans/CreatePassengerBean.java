@@ -25,6 +25,8 @@ public class CreatePassengerBean
     @PostConstruct
     public void initialize() throws NamingException {
     	
+    	System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
+    	
     	// use JNDI to inject reference to bank EJB
     	InitialContext ctx = new InitialContext();
     	travel = (Travel) ctx.lookup("java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/TravelBean!ch.hevs.travelservice.Travel");    	
@@ -40,17 +42,13 @@ public class CreatePassengerBean
     public String createPassenger() {
     	
     	try {
-    		/*Passenger p = new Passenger();
+    		Passenger p = new Passenger();
     		p.setFirstname(firstname);
     		p.setLastname(lastname);
     		p.setcity(city);
-    		p.setZipcode(zipcode);*/
+    		p.setZipcode(zipcode);
     		
-    		Passenger p = new Passenger();
-    		p.setFirstname("Yann");
-    		p.setLastname("Clavien");
-    		p.setcity("Montana");
-    		p.setZipcode("3960");
+
     		
     		
     		
@@ -63,7 +61,7 @@ public class CreatePassengerBean
     		e.printStackTrace();
     	}
 
-		return "showNewPassenger"; //  the String value returned represents the outcome used by the navigation handler to determine what page to display next.
+		return "showCreatePassengerResult"; //  the String value returned represents the outcome used by the navigation handler to determine what page to display next.
 	} 
     
     // Getter and Setter
@@ -83,11 +81,11 @@ public class CreatePassengerBean
 		this.lastname = lastname;
 	}
 
-	public String getAddress() {
+	public String getCity() {
 		return city;
 	}
 
-	public void setAddress(String address) {
+	public void setCity(String address) {
 		this.city = address;
 	}
 

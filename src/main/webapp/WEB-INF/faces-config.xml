@@ -5,8 +5,8 @@
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
     version="2.2">
 	<managed-bean>
-		<managed-bean-name>travelBean</managed-bean-name>
-		<managed-bean-class>ch.hevs.managedbeans.TravelBean</managed-bean-class>
+		<managed-bean-name>createPassengerBean</managed-bean-name>
+		<managed-bean-class>ch.hevs.managedbeans.CreatePassengerBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<navigation-rule>
@@ -29,7 +29,7 @@
 		<display-name>createPassenger.xhtml</display-name>
 		<from-view-id>/createPassenger.xhtml</from-view-id>
 		<navigation-case>
-			<from-outcome>#{travelBean.createPassenger}</from-outcome>
+			<from-outcome>#{CreatePassengerBean.createPassenger}</from-outcome>
 			<to-view-id>/showCreatePassengerResult.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
