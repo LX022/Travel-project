@@ -24,12 +24,10 @@ public class CreatePassengerBean
     
     @PostConstruct
     public void initialize() throws NamingException {
-    	
-    	System.out.println("AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA");
-    	
+    	    	
     	// use JNDI to inject reference to bank EJB
     	InitialContext ctx = new InitialContext();
-    	travel = (Travel) ctx.lookup("java:global/TP12-WEB-EJB-PC-EPC-E-0.0.1-SNAPSHOT/TravelBean!ch.hevs.travelservice.Travel");    	
+    	travel = (Travel) ctx.lookup("java:global/TRAVEL-0.0.1-SNAPSHOT/TravelBean!ch.hevs.travelservice.Travel");    	
 			
 	
 		// initialize account descriptions
