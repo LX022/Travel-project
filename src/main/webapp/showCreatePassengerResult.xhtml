@@ -11,8 +11,12 @@
         <h:outputLabel value="Votre passager a été créé avec le statut :"></h:outputLabel><h:outputLabel value=" #{createPassengerBean.creationResult}"></h:outputLabel>
         <br></br>
         <h:form>
-        <h:commandLink action="transferForm">
+        <h:commandLink action="createPassenger">
          <h:outputText value="Make new passenger" />
+        </h:commandLink>
+        <br></br>
+        <h:commandLink action="welcomeTravel">
+         <h:outputText value="Retour à l'accueil" />
         </h:commandLink>
         </h:form>
     </ui:define>

@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14141592409490" configfile="/Travel-project/src/main/webapp/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="welcomeTravel.xhtml" x="48" y="264" id="pf15556640235925" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf15556672950768 pf15556672950769" path="/welcomeTravel.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="bookFly.xhtml" x="471" y="230" id="pf15556671300096" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15556672950768" path="/bookFly.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="createPassenger.xhtml" x="408" y="384" id="pf15556671300097" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf15573417441650" inlinks="pf15556672950769" path="/createPassenger.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="showCreatePassengerResult.xhtml" x="852" y="360" id="pf15573417441651" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" inlinks="pf15573417441650" path="/showCreatePassengerResult.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="welcomeTravel.xhtml" x="48" y="264" id="pf15556640235925" referenceLink="//@navigationRule.1/@fromViewId|" outlinks="pf15556672950768 pf15556672950769" inlinks="pf15580853017141" path="/welcomeTravel.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="bookFly.xhtml" x="435" y="84" id="pf15556671300096" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15556672950768" path="/bookFly.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="createPassenger.xhtml" x="408" y="384" id="pf15556671300097" referenceLink="//@navigationRule.2/@fromViewId|" outlinks="pf15573417441650" inlinks="pf15556672950769 pf15580851601360" path="/createPassenger.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="showCreatePassengerResult.xhtml" x="744" y="360" id="pf15573417441651" referenceLink="//@navigationRule.2/@navigationCase.0/@toViewId|" outlinks="pf15580851601360 pf15580853017141" inlinks="pf15573417441650" path="/showCreatePassengerResult.xhtml"/>
   <links id="pf15556672950768" target="pf15556671300096" source="pf15556640235925" outcome="bookFly"/>
   <links id="pf15556672950769" target="pf15556671300097" source="pf15556640235925" outcome="createPassenger"/>
   <links id="pf15573417441650" target="pf15573417441651" source="pf15556671300097" outcome="#{CreatePassengerBean.createPassenger}"/>
+  <links id="pf15580851601360" target="pf15556671300097" source="pf15573417441651" outcome="createPassenger"/>
+  <links id="pf15580853017141" target="pf15556640235925" source="pf15573417441651" outcome="welcomeTravel"/>
 </pageflow:Pageflow>

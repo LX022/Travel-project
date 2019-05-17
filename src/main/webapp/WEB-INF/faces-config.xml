@@ -33,5 +33,21 @@
 			<to-view-id>/showCreatePassengerResult.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
+		<navigation-rule>
+			<display-name>showCreatePassengerResult.xhtml</display-name>
+			<from-view-id>/showCreatePassengerResult.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>createPassenger</from-outcome>
+				<to-view-id>/createPassenger.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
+			<display-name>showCreatePassengerResult.xhtml</display-name>
+			<from-view-id>/showCreatePassengerResult.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>welcomeTravel</from-outcome>
+				<to-view-id>/welcomeTravel.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
 
 </faces-config>
