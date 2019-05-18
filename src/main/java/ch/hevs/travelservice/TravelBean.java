@@ -23,7 +23,7 @@ public class TravelBean implements Travel{
 	@Override
 	public List<Departure> getDepartures() {
 		// TODO Auto-generated method stub
-		return em.createQuery("SELECT FROM Destination").getResultList();
+		return em.createQuery("SELECT d FROM Departure AS d").getResultList();
 	}
 
 	@Override
@@ -51,7 +51,7 @@ public class TravelBean implements Travel{
 	@Override
 	public List<Arrival> getArrivals() {
 		// TODO Auto-generated method stub
-		return em.createQuery("SELECT FROM Arrival").getResultList();
+		return em.createQuery("SELECT a FROM Arrival AS a").getResultList();
 	}
 
 	@Override

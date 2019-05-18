@@ -9,12 +9,30 @@
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
     <ui:define name="content">
     	<h:form>
-        	<h:outputLabel value="BookFly:"></h:outputLabel>
-        	<br></br>
-        	<h:panelGrid columns="5">
-        		
-        	</h:panelGrid>
-     		<h:commandButton value="transfer" action="#{transferBean.performTransfer}"></h:commandButton>
+        	<h:outputLabel value="Rechercher un vol:"></h:outputLabel>
+        	
+        	<table>
+     			<tr>
+          			<th><h:outputText value="Départ : "></h:outputText></th>
+          			<td>
+          				<h:selectOneMenu value="#{flightManagerBean.departureIataSelected}">
+	        				<f:selectItems value="#{flightManagerBean.allDepartureIata}"/>
+	        			</h:selectOneMenu>
+          			</td>
+     			</tr>
+     			<tr>
+          			<th><h:outputText value="Arrivée : "></h:outputText></th>
+          			<td>
+          			  	<h:selectOneMenu value="#{flightManagerBean.arrivalIataSelected}">
+	        				<f:selectItems value="#{flightManagerBean.allArrivalIata}"/>
+	        			</h:selectOneMenu>
+          			</td>
+     			</tr>
+
+			</table>
+    
+     		<!-- <h:commandButton value="Enregistrer le nouveau passager" action="bookFlyFinal"></h:commandButton> -->
+     		<br />
         </h:form>
     </ui:define>
 </ui:composition>
