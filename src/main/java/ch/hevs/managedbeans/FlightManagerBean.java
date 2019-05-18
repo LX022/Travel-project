@@ -34,10 +34,6 @@ public class FlightManagerBean
     
     @PostConstruct
     public void initialize() throws NamingException {
-    	System.out.println("#########################################################");    	
-    	System.out.println("#########################################################");
-    	System.out.println("#########################################################");    	
-    	System.out.println("#########################################################");
     	
     	    	
     	// use JNDI to inject reference to bank EJB
@@ -47,17 +43,7 @@ public class FlightManagerBean
     	
 	
 		// initialize account descriptions
-    	this.allDeparture = travel.getDepartures();
-    	
-    	System.out.println("#########################################################");
-    	System.out.println("#########################################################");
-		for (Departure d : allDeparture) {
-			System.out.println(d.getIata());
-		}
-    	
-    	System.out.println("#########################################################");    	
-    	System.out.println("#########################################################");
-    	
+    	this.allDeparture = travel.getDepartures();   	
 		this.allDepartureIata = new ArrayList<String>();
 		for (Departure d : allDeparture) {
 			this.allDepartureIata.add(d.getIata());
