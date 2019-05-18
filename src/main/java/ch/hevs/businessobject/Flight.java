@@ -24,6 +24,7 @@ public class Flight {
 	private Date date;
 	private String aircraftModel;
 	private long price;
+	private int numberOfPassengers;
 	
 	// relations
 	
@@ -86,6 +87,14 @@ public class Flight {
 	public void setPrice(long price) {
 		this.price = price;
 	}
+	
+	public int getNumberOfPassengers() {
+		return numberOfPassengers;
+	}
+
+	public void setNumberOfPassengers(int numberOfPassengers) {
+		this.numberOfPassengers = numberOfPassengers;
+	}
 
 	public Departure getDepartureFlights() {
 		return departure;
@@ -108,11 +117,12 @@ public class Flight {
 		this.passengers = new ArrayList<Passenger>();
 	}
 	
-	public Flight(String flightNumber, Date date, String aircraftModel, long price) {
+	public Flight(String flightNumber, Date date, String aircraftModel, long price, int numberOfPassengers) {
 		this.flightNumber=flightNumber;
 		this.date=date;
 		this.aircraftModel=aircraftModel;
 		this.price=price;
+		this.numberOfPassengers=numberOfPassengers;
 		passengers = new ArrayList<Passenger>();
 	}
 	
