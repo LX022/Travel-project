@@ -47,7 +47,7 @@ public class CreateAirportBean {
 			e.printStackTrace();
 		}
 
-		return "showCreateDepartureAirportResult";
+		return "showCreateAirportResult";
 	}
 
 	public String createArrivalAirport() {
@@ -65,7 +65,59 @@ public class CreateAirportBean {
 			e.printStackTrace();
 		}
 
-		return "showCreateArrivalAirportResult";
+		return "showCreateAirportResult";
 	}
+
+	public String getIata() {
+		return iata;
+	}
+
+	public void setIata(String iata) {
+		this.iata = iata;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public String getCountry() {
+		return country;
+	}
+
+	public void setCountry(String country) {
+		this.country = country;
+	}
+
+	public String getGate() {
+		return gate;
+	}
+
+	public void setGate(String gate) {
+		this.gate = gate;
+	}
+
+	public Travel getTravel() {
+		return travel;
+	}
+
+	public void setTravel(Travel travel) {
+		this.travel = travel;
+	}
+
+	public String getCreationResult() {
+		return creationResult;
+	}
+
+	public void setCreationResult(String creationResult) {
+		this.creationResult = creationResult;
+	}
+	
+	
+	
+	
 
 }

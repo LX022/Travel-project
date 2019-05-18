@@ -9,6 +9,11 @@
 		<managed-bean-class>ch.hevs.managedbeans.CreatePassengerBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
+	<managed-bean>
+		<managed-bean-name>createAirportBean</managed-bean-name>
+		<managed-bean-class>ch.hevs.managedbeans.CreateAirportBean</managed-bean-class>
+		<managed-bean-scope>session</managed-bean-scope>
+	</managed-bean>
 	<navigation-rule>
 		<display-name>welcomeTravel.xhtml</display-name>
 		<from-view-id>/welcomeTravel.xhtml</from-view-id>
@@ -47,6 +52,38 @@
 			<navigation-case>
 				<from-outcome>welcomeTravel</from-outcome>
 				<to-view-id>/welcomeTravel.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
+			<display-name>welcomeTravel.xhtml</display-name>
+			<from-view-id>/welcomeTravel.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>createDepartureAirport</from-outcome>
+				<to-view-id>/createDepartureAirport.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
+			<display-name>createDepartureAirport.xhtml</display-name>
+			<from-view-id>/createDepartureAirport.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>#{CreateAirportBean.createDepartureAirport}</from-outcome>
+				<to-view-id>/showCreateAirportResult.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
+			<display-name>welcomeTravel.xhtml</display-name>
+			<from-view-id>/welcomeTravel.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>createArrivalAirport</from-outcome>
+				<to-view-id>/createArrivalAirport.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
+			<display-name>createArrivalAirport.xhtml</display-name>
+			<from-view-id>/createArrivalAirport.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>#{CreateAirportBean.createArrivalAirport}</from-outcome>
+				<to-view-id>/showCreateAirportResult.xhtml</to-view-id>
 			</navigation-case>
 		</navigation-rule>
 
