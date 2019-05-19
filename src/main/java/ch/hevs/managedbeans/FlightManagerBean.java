@@ -15,11 +15,6 @@ import ch.hevs.businessobject.Departure;
 import ch.hevs.businessobject.Flight;
 import ch.hevs.travelservice.Travel;
 
-/**
- * TransferBean.java
- * 
- */
-
 public class FlightManagerBean {
 
 	private List<Departure> allDeparture;
@@ -39,6 +34,8 @@ public class FlightManagerBean {
 	private String aircraftModel;
 	private long price;
 	private int numberOfPassengers;
+	private Departure departure;
+	private Arrival arrival;
 	private String creationResult;
 
 	@PostConstruct
@@ -97,7 +94,10 @@ public class FlightManagerBean {
 			// TODO Auto-generated catch block
 			e1.printStackTrace();
 		}
-		
+				
+		departure = travel.getDepartureAirportByIATA(departureIataSelected);
+		arrival = travel.getArrivalAirportByIATA(arrivalIataSelected);
+
 
 		try {
 			Flight f = new Flight();
@@ -106,6 +106,7 @@ public class FlightManagerBean {
 			f.setAircraftModel(aircraftModel);
 			f.setPrice(price);
 			f.setNumberOfPassengers(numberOfPassengers);
+	
 
 			this.creationResult = "Success!";
 			travel.createFlight(f);
@@ -230,6 +231,22 @@ public class FlightManagerBean {
 
 	public void setNumberOfPassengers(int numberOfPassengers) {
 		this.numberOfPassengers = numberOfPassengers;
+	}
+
+	public Departure getDeparture() {
+		return departure;
+	}
+
+	public void setDeparture(Departure departure) {
+		this.departure = departure;
+	}
+
+	public Arrival getArrival() {
+		return arrival;
+	}
+
+	public void setArrival(Arrival arrival) {
+		this.arrival = arrival;
 	}
 
 	public String getCreationResult() {
