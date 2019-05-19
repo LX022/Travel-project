@@ -117,14 +117,13 @@ public class Flight {
 		this.passengers = new ArrayList<Passenger>();
 	}
 	
-	public Flight(String flightNumber, Date date, String aircraftModel, long price, int numberOfPassengers, Departure departure, Arrival arrival) {
+	public Flight(String flightNumber, Date date, String aircraftModel, long price, int numberOfPassengers) {
 		this.flightNumber=flightNumber;
 		this.date=date;
 		this.aircraftModel=aircraftModel;
 		this.price=price;
 		this.numberOfPassengers=numberOfPassengers;
-		this.departure =departure;
-		this.arrival=arrival;
+		
 		passengers = new ArrayList<Passenger>();
 	}
 	
