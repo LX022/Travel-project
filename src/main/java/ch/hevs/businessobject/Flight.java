@@ -96,11 +96,11 @@ public class Flight {
 		this.numberOfPassengers = numberOfPassengers;
 	}
 
-	public Departure getDepartureFlights() {
+	public Departure getDepartureFlight() {
 		return departure;
 	}
 
-	public void setDepartureFlights(Departure departure) {
+	public void setDepartureFlight(Departure departure) {
 		this.departure = departure;
 	}
 
@@ -117,12 +117,14 @@ public class Flight {
 		this.passengers = new ArrayList<Passenger>();
 	}
 	
-	public Flight(String flightNumber, Date date, String aircraftModel, long price, int numberOfPassengers) {
+	public Flight(String flightNumber, Date date, String aircraftModel, long price, int numberOfPassengers, Departure departure, Arrival arrival) {
 		this.flightNumber=flightNumber;
 		this.date=date;
 		this.aircraftModel=aircraftModel;
 		this.price=price;
 		this.numberOfPassengers=numberOfPassengers;
+		this.departure =departure;
+		this.arrival=arrival;
 		passengers = new ArrayList<Passenger>();
 	}
 	
