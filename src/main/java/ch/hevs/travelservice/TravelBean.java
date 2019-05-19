@@ -89,7 +89,7 @@ public class TravelBean implements Travel{
 	@Override
 	public Departure getDepartureAirportByIATA(String iata) {
 		// TODO Auto-generated method stub
-		Query query = em.createQuery("SELECT d.departure FROM Departure d where d.iata=:iata");
+		Query query = em.createQuery("SELECT d FROM Departure d where d.iata = :iata");
 		query.setParameter("iata", iata).getResultList();
 		
 		return (Departure) query.getSingleResult();
@@ -98,7 +98,7 @@ public class TravelBean implements Travel{
 	@Override
 	public Arrival getArrivalAirportByIATA(String iata) {
 		// TODO Auto-generated method stub
-		Query query = em.createQuery("SELECT a.arrival FROM Arrival a where a.iata=:iata");
+		Query query = em.createQuery("SELECT a FROM Arrival a where a.iata = :iata");
 		query.setParameter("iata", iata).getResultList();
 		
 		return (Arrival) query.getSingleResult();
