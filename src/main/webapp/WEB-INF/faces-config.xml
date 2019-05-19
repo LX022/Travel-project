@@ -47,14 +47,6 @@
 			<display-name>showCreatePassengerResult.xhtml</display-name>
 			<from-view-id>/showCreatePassengerResult.xhtml</from-view-id>
 			<navigation-case>
-				<from-outcome>createPassenger</from-outcome>
-				<to-view-id>/createPassenger.xhtml</to-view-id>
-			</navigation-case>
-		</navigation-rule>
-		<navigation-rule>
-			<display-name>showCreatePassengerResult.xhtml</display-name>
-			<from-view-id>/showCreatePassengerResult.xhtml</from-view-id>
-			<navigation-case>
 				<from-outcome>welcomeTravel</from-outcome>
 				<to-view-id>/welcomeTravel.xhtml</to-view-id>
 			</navigation-case>
@@ -89,6 +81,38 @@
 			<navigation-case>
 				<from-outcome>#{CreateAirportBean.createArrivalAirport}</from-outcome>
 				<to-view-id>/showCreateAirportResult.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
+			<display-name>welcomeTravel.xhtml</display-name>
+			<from-view-id>/welcomeTravel.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>createFlight</from-outcome>
+				<to-view-id>/createFlight.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
+			<display-name>createFlight.xhtml</display-name>
+			<from-view-id>/createFlight.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>#{FlightManagerBean.createFlight}</from-outcome>
+				<to-view-id>/showCreateFlightResult.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
+			<display-name>showCreateAirportResult.xhtml</display-name>
+			<from-view-id>/showCreateAirportResult.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>welcomeTravel</from-outcome>
+				<to-view-id>/welcomeTravel.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
+			<display-name>showCreateFlightResult.xhtml</display-name>
+			<from-view-id>/showCreateFlightResult.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>welcomeTravel</from-outcome>
+				<to-view-id>/welcomeTravel.xhtml</to-view-id>
 			</navigation-case>
 		</navigation-rule>
 
