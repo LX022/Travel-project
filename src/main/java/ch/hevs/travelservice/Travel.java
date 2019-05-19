@@ -4,6 +4,7 @@ import java.util.List;
 
 import javax.ejb.Local;
 
+import ch.hevs.businessobject.Airport;
 import ch.hevs.businessobject.Arrival;
 import ch.hevs.businessobject.Departure;
 import ch.hevs.businessobject.Flight;
@@ -32,5 +33,9 @@ public interface Travel {
 	void createDeparture(Departure newDeparture) throws Exception;
 	
 	void createArrival(Arrival newArrival) throws Exception;
+	
+	Departure getDepartureAirportByIATA(String iata);
+	
+	Arrival getArrivalAirportByIATA(String iata);
 	
 }

@@ -7,6 +7,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
+import ch.hevs.businessobject.Airport;
 import ch.hevs.businessobject.Arrival;
 import ch.hevs.businessobject.Departure;
 import ch.hevs.businessobject.Flight;
@@ -85,8 +86,22 @@ public class TravelBean implements Travel{
 		em.persist(newArrival);
 	}
 
-	
-	
+	@Override
+	public Departure getDepartureAirportByIATA(String iata) {
+		// TODO Auto-generated method stub
+		Query query = em.createQuery("SELECT d.departure FROM Departure d where d.iata=:iata");
+		query.setParameter("iata", iata).getResultList();
+		
+		return (Departure) query.getSingleResult();
+	}
 
-
+	@Override
+	public Arrival getArrivalAirportByIATA(String iata) {
+		// TODO Auto-generated method stub
+		Query query = em.createQuery("SELECT a.arrival FROM Arrival a where a.iata=:iata");
+		query.setParameter("iata", iata).getResultList();
+		
+		return (Arrival) query.getSingleResult();
+	}	
+	
 }
