@@ -1,19 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14141592409490" configfile="/Travel-project/src/main/webapp/WEB-INF/faces-config.xml">
-  <nodes xsi:type="pageflow:PFPage" name="welcomeTravel.xhtml" x="552" y="336" id="pf15556640235925" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf15556672950768 pf15556672950769 pf15581848057930 pf15581858616054" inlinks="pf15580853017141" path="/welcomeTravel.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="bookFly.xhtml" x="96" y="219" id="pf15556671300096" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15556672950768" path="/bookFly.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="createPassenger.xhtml" x="672" y="576" id="pf15556671300097" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf15573417441650" inlinks="pf15556672950769 pf15580851601360" path="/createPassenger.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="showCreatePassengerResult.xhtml" x="1020" y="552" id="pf15573417441651" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf15580851601360 pf15580853017141" inlinks="pf15573417441650" path="/showCreatePassengerResult.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="createDepartureAirport.xhtml" x="855" y="228" id="pf15581848057941" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf15581849439502" inlinks="pf15581848057930" path="/createDepartureAirport.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="showCreateAirportResult.xhtml" x="984" y="24" id="pf15581849439503" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" inlinks="pf15581849439502 pf15581861271846" path="/showCreateAirportResult.xhtml"/>
-  <nodes xsi:type="pageflow:PFPage" name="createArrivalAirport.xhtml" x="624" y="72" id="pf15581858616055" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf15581861271846" inlinks="pf15581858616054" path="/createArrivalAirport.xhtml"/>
+<pageflow:Pageflow xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:pageflow="http://www.sybase.com/suade/pageflow" id="pf14141592409490" configfile="/Travel project/src/main/webapp/WEB-INF/faces-config.xml">
+  <nodes xsi:type="pageflow:PFPage" name="welcomeTravel.xhtml" x="552" y="336" id="pf15556640235925" referenceLink="//@navigationRule.7/@fromViewId|" outlinks="pf15556672950768 pf15556672950769 pf15581848057930 pf15581858616054 pf15582669785920" inlinks="pf15580853017141 pf15582766340084 pf15582766629655" path="/welcomeTravel.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="bookFly.xhtml" x="60" y="384" id="pf15556671300096" referenceLink="//@navigationRule.0/@navigationCase.0/@toViewId|" inlinks="pf15556672950768" path="/bookFly.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="createPassenger.xhtml" x="204" y="528" id="pf15556671300097" referenceLink="//@navigationRule.3/@navigationCase.0/@toViewId|" outlinks="pf15573417441650" inlinks="pf15556672950769" path="/createPassenger.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="showCreatePassengerResult.xhtml" x="966" y="456" id="pf15573417441651" referenceLink="//@navigationRule.4/@fromViewId|" outlinks="pf15580853017141" inlinks="pf15573417441650" path="/showCreatePassengerResult.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="createDepartureAirport.xhtml" x="966" y="272" id="pf15581848057941" referenceLink="//@navigationRule.6/@fromViewId|" outlinks="pf15581849439502" inlinks="pf15581848057930" path="/createDepartureAirport.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="showCreateAirportResult.xhtml" x="690" y="24" id="pf15581849439503" referenceLink="//@navigationRule.8/@navigationCase.0/@toViewId|" outlinks="pf15582766340084" inlinks="pf15581849439502 pf15581861271846" path="/showCreateAirportResult.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="createArrivalAirport.xhtml" x="324" y="36" id="pf15581858616055" referenceLink="//@navigationRule.8/@fromViewId|" outlinks="pf15581861271846" inlinks="pf15581858616054" path="/createArrivalAirport.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="createFlight.xhtml" x="288" y="132" id="pf15582669785921" outlinks="pf15582721891812" inlinks="pf15582669785920" path="/createFlight.xhtml"/>
+  <nodes xsi:type="pageflow:PFPage" name="showCreateFlightResult.xhtml" x="48" y="240" id="pf15582721891813" outlinks="pf15582766629655" inlinks="pf15582721891812" path="/showCreateFlightResult.xhtml"/>
   <links id="pf15556672950768" target="pf15556671300096" source="pf15556640235925" outcome="bookFly"/>
   <links id="pf15556672950769" target="pf15556671300097" source="pf15556640235925" outcome="createPassenger"/>
   <links id="pf15573417441650" target="pf15573417441651" source="pf15556671300097" outcome="#{CreatePassengerBean.createPassenger}"/>
-  <links id="pf15580851601360" target="pf15556671300097" source="pf15573417441651" outcome="createPassenger"/>
   <links id="pf15580853017141" target="pf15556640235925" source="pf15573417441651" outcome="welcomeTravel"/>
   <links id="pf15581848057930" target="pf15581848057941" source="pf15556640235925" outcome="createDepartureAirport"/>
   <links id="pf15581849439502" target="pf15581849439503" source="pf15581848057941" outcome="#{CreateAirportBean.createDepartureAirport}"/>
   <links id="pf15581858616054" target="pf15581858616055" source="pf15556640235925" outcome="createArrivalAirport"/>
   <links id="pf15581861271846" target="pf15581849439503" source="pf15581858616055" outcome="#{CreateAirportBean.createArrivalAirport}"/>
+  <links id="pf15582669785920" target="pf15582669785921" source="pf15556640235925" outcome="createFlight"/>
+  <links id="pf15582721891812" target="pf15582721891813" source="pf15582669785921" outcome="#{FlightManagerBean.createFlight}"/>
+  <links id="pf15582766340084" target="pf15556640235925" source="pf15581849439503" outcome="welcomeTravel"/>
+  <links id="pf15582766629655" target="pf15556640235925" source="pf15582721891813" outcome="welcomeTravel"/>
 </pageflow:Pageflow>
