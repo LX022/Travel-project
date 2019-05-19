@@ -95,35 +95,36 @@ public class Flight {
 	public void setNumberOfPassengers(int numberOfPassengers) {
 		this.numberOfPassengers = numberOfPassengers;
 	}
-
-	public Departure getDepartureFlight() {
+	
+	public Departure getDeparture() {
 		return departure;
 	}
 
-	public void setDepartureFlight(Departure departure) {
+	public void setDeparture(Departure departure) {
 		this.departure = departure;
 	}
 
-	public Arrival getArrivalFlight() {
+	public Arrival getArrival() {
 		return arrival;
 	}
 
-	public void setArrivalFlight(Arrival arrival) {
+	public void setArrival(Arrival arrival) {
 		this.arrival = arrival;
 	}
-	
+
 	// constructors
 	public Flight() {
 		this.passengers = new ArrayList<Passenger>();
 	}
 	
-	public Flight(String flightNumber, Date date, String aircraftModel, long price, int numberOfPassengers) {
+	public Flight(String flightNumber, Date date, String aircraftModel, long price, int numberOfPassengers, Departure departure, Arrival arrival) {
 		this.flightNumber=flightNumber;
 		this.date=date;
 		this.aircraftModel=aircraftModel;
 		this.price=price;
 		this.numberOfPassengers=numberOfPassengers;
-		
+		this.arrival=arrival;
+		this.departure=departure;
 		passengers = new ArrayList<Passenger>();
 	}
 	
