@@ -106,7 +106,10 @@ public class FlightManagerBean {
 			f.setAircraftModel(aircraftModel);
 			f.setPrice(price);
 			f.setNumberOfPassengers(numberOfPassengers);
-	
+			
+			//Problème pour ajouter les FK
+			//f.setDeparture(departure);
+			//f.setArrival(arrival);
 
 			this.creationResult = "Success!";
 			travel.createFlight(f);
