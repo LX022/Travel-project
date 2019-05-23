@@ -17,7 +17,7 @@ public class Departure extends Airport{
 	private String gate;
 	
 	// relations	
-	@OneToMany(mappedBy = "departure", cascade= CascadeType.PERSIST)
+	@OneToMany(mappedBy = "departure", cascade= CascadeType.MERGE)
 	private List<Flight> flights;
 
 

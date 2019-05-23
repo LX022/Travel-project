@@ -28,11 +28,11 @@ public class Flight {
 	
 	// relations
 	
-	@ManyToOne(cascade= CascadeType.PERSIST)
+	@ManyToOne(cascade= CascadeType.MERGE)
 	@JoinColumn(name = "FK_DEPARTURE")
 	private Departure departure;
 	
-	@ManyToOne(cascade= CascadeType.PERSIST)
+	@ManyToOne(cascade= CascadeType.MERGE)
 	@JoinColumn(name = "FK_ARRIVAL")
 	private Arrival arrival;
 		

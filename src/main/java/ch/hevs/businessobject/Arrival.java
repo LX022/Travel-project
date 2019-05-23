@@ -13,7 +13,7 @@ public class Arrival extends Airport{
 	
 	
 	// relations	
-	@OneToMany(mappedBy = "arrival", cascade= CascadeType.PERSIST)
+	@OneToMany(mappedBy = "arrival", cascade= CascadeType.MERGE)
 	private List<Flight> flights;
 
 

@@ -108,8 +108,8 @@ public class FlightManagerBean {
 			f.setNumberOfPassengers(numberOfPassengers);
 			
 			//Problème pour ajouter les FK
-			//f.setDeparture(departure);
-			//f.setArrival(arrival);
+			f.setDeparture(departure);
+			f.setArrival(arrival);
 
 			this.creationResult = "Success!";
 			travel.createFlight(f);
