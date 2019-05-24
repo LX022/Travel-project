@@ -21,7 +21,11 @@ public class FlightManagerBean {
 	private List<Arrival> allArrival;
 	private List<String> allDepartureIata;
 	private List<String> allArrivalIata;
-
+	
+	private List<String> allChoiceFlightsDesignation;
+	private List<Flight> allChoiceFlights;
+	private String flightSelected;
+	
 	private String departureIataSelected;
 	private String arrivalIataSelected;
 
@@ -37,6 +41,7 @@ public class FlightManagerBean {
 	private Departure departure;
 	private Arrival arrival;
 	private String creationResult;
+	
 
 	@PostConstruct
 	public void initialize() throws NamingException {
@@ -50,6 +55,11 @@ public class FlightManagerBean {
 		this.aircraftModel = "aircraftModel";
 		this.price = 1000;
 		this.numberOfPassengers = 300;
+		
+		
+		allChoiceFlightsDesignation = new ArrayList<String>();;
+		allChoiceFlights = new ArrayList<Flight>();
+		flightSelected = "lx22";
 
 		// initialize airport choices
 		this.allDeparture = travel.getDepartures();
@@ -63,25 +73,34 @@ public class FlightManagerBean {
 		for (Arrival a : allArrival) {
 			this.allArrivalIata.add(a.getIata());
 		}
+	
 
 	}
 
-	public String selectDeparture() {
-
+	public String flightSelection() {
+		
+		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
+		
+		departure = travel.getDepartureAirportByIATA(departureIataSelected);
+		arrival = travel.getArrivalAirportByIATA(arrivalIataSelected);
+		System.out.println("(((((((((((((((((((((((((((((((((((((((((((((((&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&///////////////////////////");
+		System.out.println(departure.getIata());
+		System.out.println(arrival.getIata());
+		System.out.println(dateInString);
+				
 		try {
-
-			// customerDirectory.createPassenger(p);
-			this.selectionState = "Success!";
-
+			date = formatter.parse(dateInString);
+			System.out.println(date);
+			allChoiceFlights = travel.getFlightsFromDepartureAndArrival(departure, arrival, date);
+			for (Flight f : allChoiceFlights) {
+				this.allChoiceFlightsDesignation.add(f.getFlightNumber());
+			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 
-		return "showCreatePassengerResult"; // the String value returned
-											// represents the outcome used by
-											// the navigation handler to
-											// determine what page to display
-											// next.
+		return "bookFlySelectFlight"; 
 	}
 
 	public String createFlight() {
@@ -259,6 +278,32 @@ public class FlightManagerBean {
 	public void setCreationResult(String creationResult) {
 		this.creationResult = creationResult;
 	}
+
+	public List<String> getAllChoiceFlightsDesignation() {
+		return allChoiceFlightsDesignation;
+	}
+
+	public void setAllChoiceFlightsDesignation(List<String> allChoiceFlightsDesignation) {
+		this.allChoiceFlightsDesignation = allChoiceFlightsDesignation;
+	}
+
+	public List<Flight> getAllChoiceFlights() {
+		return allChoiceFlights;
+	}
+
+	public void setAllChoiceFlights(List<Flight> allChoiceFlights) {
+		this.allChoiceFlights = allChoiceFlights;
+	}
+
+	public String getFlightSelected() {
+		return flightSelected;
+	}
+
+	public void setFlightSelected(String flightSelected) {
+		this.flightSelected = flightSelected;
+	}
+	
+	
 	
 	
 

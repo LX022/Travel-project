@@ -1,5 +1,6 @@
 package ch.hevs.travelservice;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.Local;
@@ -20,7 +21,7 @@ public interface Travel {
 	List<Flight> getFlights();
 	
 	//à supprimer normalement
-	List<Flight> getFlightsFromDepartureAndArrival(Departure departure, Arrival arrival);
+	List<Flight> getFlightsFromDepartureAndArrival(Departure departure, Arrival arrival, Date date);
 	
 	List<Passenger> getPassengers();
 	

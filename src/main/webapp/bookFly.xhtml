@@ -12,6 +12,10 @@
         	<h:outputLabel value="Rechercher un vol:"></h:outputLabel>
         	
         	<table>
+        		<tr>
+          			<th><h:outputText value="Date de départ (dd/MM/yyyy) : "></h:outputText></th>
+          			<td><h:inputText value="#{flightManagerBean.dateInString}" maxlength="50" style="width: 100px;"></h:inputText></td>
+     			</tr>
      			<tr>
           			<th><h:outputText value="Départ : "></h:outputText></th>
           			<td>
@@ -31,7 +35,7 @@
 
 			</table>
     
-     		<!-- <h:commandButton value="Enregistrer le nouveau passager" action="bookFlyFinal"></h:commandButton> -->
+    		<h:commandButton value="Consulter les vols disponible" action="#{flightManagerBean.flightSelection}"></h:commandButton>
      		<br />
         </h:form>
     </ui:define>

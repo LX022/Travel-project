@@ -1,5 +1,6 @@
 package ch.hevs.travelservice;
 
+import java.util.Date;
 import java.util.List;
 
 import javax.ejb.Stateless;
@@ -28,13 +29,18 @@ public class TravelBean implements Travel{
 	}
 
 	@Override
-	public List<Flight> getFlightsFromDepartureAndArrival(Departure from, Arrival to) {
+	public List<Flight> getFlightsFromDepartureAndArrival(Departure departure, Arrival arrival, Date date) {
 		// TODO Auto-generated method stub
-		Query query = em.createQuery("SELECT d.destinations FROM Destination d where d.country=:from AND d.country=:to");
-		query.setParameter("from", from).getResultList();
-		query.setParameter("to", to).getResultList();
 		
-		return (List<Flight>) query.getSingleResult();
+		//Query query = em.createQuery("SELECT f FROM Flight AS f");
+//		Query query = em.createQuery("SELECT f FROM Flight f where f.departure = :departure and f.arrival = :arrival");
+//		query.setParameter("departure", departure).setParameter("arrival", arrival).getResultList();
+		
+		//return query.getResultList();
+		
+		return em.createQuery("SELECT f FROM Flight AS f").getResultList();
+		
+		
 	}
 
 	@Override
@@ -58,7 +64,7 @@ public class TravelBean implements Travel{
 	@Override
 	public List<Flight> getFlights() {
 		// TODO Auto-generated method stub
-		return em.createQuery("SELECT FROM Flight").getResultList();
+		return em.createQuery("SELECT f FROM Flight AS f").getResultList();
 	}
 	
 
