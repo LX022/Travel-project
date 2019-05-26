@@ -32,14 +32,10 @@ public class TravelBean implements Travel{
 	public List<Flight> getFlightsFromDepartureAndArrival(Departure departure, Arrival arrival, Date date) {
 		// TODO Auto-generated method stub
 		
-		//Query query = em.createQuery("SELECT f FROM Flight AS f");
-//		Query query = em.createQuery("SELECT f FROM Flight f where f.departure = :departure and f.arrival = :arrival");
-//		query.setParameter("departure", departure).setParameter("arrival", arrival).getResultList();
+		Query query = em.createQuery("SELECT f FROM Flight f where f.departure = :departure and f.arrival = :arrival");
+		query.setParameter("departure", departure).setParameter("arrival", arrival).getResultList();
 		
-		//return query.getResultList();
-		
-		return em.createQuery("SELECT f FROM Flight AS f").getResultList();
-		
+		return query.getResultList();		
 		
 	}
 
