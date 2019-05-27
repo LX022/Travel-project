@@ -112,14 +112,24 @@ public class FlightManagerBean {
 
 		return "bookFlySelectFlight";
 	}
+	
+	
 	public String passengerSelection() {
 		
+		System.out.println(passengerSelected + "HERE I AM ####################################################################################################################################");
 		space = passengerSelected.indexOf(" ");
+		System.out.println("space : " + space);
 		
 		firstname = passengerSelected.substring(0, space);
-		lastname = passengerSelected.substring(space+1);
+		System.out.println("##############################################################################################################################firstname : " + firstname );
 		
-		System.out.println(flight.getId() + "#############################################################################################################################################");
+		
+		lastname = passengerSelected.substring(space+1);
+		System.out.println(lastname + "##############################################################################################################################firstname : " + firstname );
+
+		
+		System.out.println(firstname + " - " + lastname);
+		System.out.println("#######################################################################################################################################################");
 		
 		try {
 			flight=travel.getFlightFromNumber(flightSelected);

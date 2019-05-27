@@ -109,7 +109,7 @@ public class TravelBean implements Travel{
 	@Override
 	public Flight getFlightFromNumber(String flightnumber) {
 		// TODO Auto-generated method stub
-		Query query = em.createQuery("SELECT f FROM Flight f where f.flightnumber = :flightnumber");
+		Query query = em.createQuery("SELECT f FROM Flight f where f.flightNumber = :flightnumber");
 		query.setParameter("flightnumber", flightnumber).getResultList();
 		
 		return (Flight) query.getSingleResult();
