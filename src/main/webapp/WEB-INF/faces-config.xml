@@ -132,11 +132,26 @@
 			</navigation-case>
 		</navigation-rule>
 		<navigation-rule>
+			<display-name>bookFlySelectFlight.xhtml</display-name>
+			<from-view-id>/bookFlySelectFlight.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>#{FlightManagerBean.passengerSelection}</from-outcome>
+				<to-view-id>/flightBooked.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
+			<display-name>createFlight.xhtml</display-name>
+			<from-view-id>/createFlight.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>createFlight</from-outcome>
+				<to-view-id>/dateError.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
 			<display-name>dateError.xhtml</display-name>
 			<from-view-id>/dateError.xhtml</from-view-id>
 			<navigation-case>
-				<from-outcome>bookFly</from-outcome>
-				<to-view-id>/bookFly.xhtml</to-view-id>
+				<to-view-id>/welcomeTravel.xhtml</to-view-id>
 			</navigation-case>
 		</navigation-rule>
 
