@@ -14,6 +14,7 @@ import javax.naming.NamingException;
 import ch.hevs.businessobject.Arrival;
 import ch.hevs.businessobject.Departure;
 import ch.hevs.businessobject.Flight;
+import ch.hevs.businessobject.Passenger;
 import ch.hevs.travelservice.Travel;
 
 public class FlightManagerBean {
@@ -23,6 +24,10 @@ public class FlightManagerBean {
 	private List<String> allDepartureIata;
 	private List<String> allArrivalIata;
 
+	private List<Passenger> passengers;
+	private List<String> passengersNames;
+	private String passengerSelected;
+	
 	private List<String> allChoiceFlightsDesignation;
 	private List<Flight> allChoiceFlights;
 	private String flightSelected;
@@ -36,6 +41,7 @@ public class FlightManagerBean {
 	private String flightNumber;
 	private Date date;
 	private String dateInString;
+
 	private String aircraftModel;
 	private long price;
 	private int numberOfPassengers;
@@ -50,16 +56,13 @@ public class FlightManagerBean {
 		InitialContext ctx = new InitialContext();
 		travel = (Travel) ctx.lookup("java:global/TRAVEL-0.0.1-SNAPSHOT/TravelBean!ch.hevs.travelservice.Travel");
 
-		Date today = Calendar.getInstance().getTime();
-
 		this.flightNumber = "flightNumber";
-		this.dateInString = today.toString();
+		this.dateInString = "27/05/2019";
 		this.aircraftModel = "aircraftModel";
 		this.price = 1000;
 		this.numberOfPassengers = 300;
 
 		allChoiceFlightsDesignation = new ArrayList<String>();
-		;
 		allChoiceFlights = new ArrayList<Flight>();
 
 		// initialize airport choices
@@ -75,6 +78,12 @@ public class FlightManagerBean {
 			this.allArrivalIata.add(a.getIata());
 		}
 
+		this.passengers = travel.getPassengers();
+		this.passengersNames = new ArrayList<String>();
+		for (Passenger p : passengers){
+			this.passengersNames.add(p.getLastname() +" "+p.getFirstname());
+		}
+		
 	}
 
 	public String flightSelection() {
@@ -97,6 +106,14 @@ public class FlightManagerBean {
 
 		return "bookFlySelectFlight";
 	}
+	public String passengerSelection(){
+		
+
+		
+		return "flightBooked";
+	}
+	
+
 
 	public String createFlight() {
 
@@ -297,4 +314,28 @@ public class FlightManagerBean {
 		this.flightSelected = flightSelected;
 	}
 
+	public List<Passenger> getPassengers() {
+		return passengers;
+	}
+
+	public void setPassengers(List<Passenger> passengers) {
+		this.passengers = passengers;
+	}
+
+	public List<String> getPassengersNames() {
+		return passengersNames;
+	}
+
+	public void setPassengersNames(List<String> passengersNames) {
+		this.passengersNames = passengersNames;
+	}
+
+	public String getPassengerSelected() {
+		return passengerSelected;
+	}
+
+	public void setPassengerSelected(String passengerSelected) {
+		this.passengerSelected = passengerSelected;
+	}
+	
 }

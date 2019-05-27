@@ -42,7 +42,7 @@ public class TravelBean implements Travel{
 	@Override
 	public List<Passenger> getPassengers() {
 		// TODO Auto-generated method stub
-		return em.createQuery("SELECT FROM Passenger").getResultList();
+		return em.createQuery("SELECT p FROM Passenger p").getResultList();
 	}
 
 	@Override
