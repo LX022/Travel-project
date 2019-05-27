@@ -3,6 +3,7 @@ package ch.hevs.managedbeans;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -49,8 +50,10 @@ public class FlightManagerBean {
 		InitialContext ctx = new InitialContext();
 		travel = (Travel) ctx.lookup("java:global/TRAVEL-0.0.1-SNAPSHOT/TravelBean!ch.hevs.travelservice.Travel");
 
+		Date today = Calendar.getInstance().getTime();
+
 		this.flightNumber = "flightNumber";
-		this.dateInString = "07/06/2013";
+		this.dateInString = today.toString();
 		this.aircraftModel = "aircraftModel";
 		this.price = 1000;
 		this.numberOfPassengers = 300;
