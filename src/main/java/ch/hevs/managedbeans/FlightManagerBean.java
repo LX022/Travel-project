@@ -27,10 +27,12 @@ public class FlightManagerBean {
 	private List<Passenger> passengers;
 	private List<String> passengersNames;
 	private String passengerSelected;
+	private Passenger passenger;
 	
 	private List<String> allChoiceFlightsDesignation;
 	private List<Flight> allChoiceFlights;
 	private String flightSelected;
+	private Flight flight;
 
 	private String departureIataSelected;
 	private String arrivalIataSelected;
@@ -48,7 +50,11 @@ public class FlightManagerBean {
 	private Departure departure;
 	private Arrival arrival;
 	private String creationResult;
-
+	
+	private String firstname;
+	private String lastname;
+	private int space;
+	
 	@PostConstruct
 	public void initialize() throws NamingException {
 
@@ -81,7 +87,7 @@ public class FlightManagerBean {
 		this.passengers = travel.getPassengers();
 		this.passengersNames = new ArrayList<String>();
 		for (Passenger p : passengers){
-			this.passengersNames.add(p.getLastname() +" "+p.getFirstname());
+			this.passengersNames.add(p.getFirstname() +" "+p.getLastname());
 		}
 		
 	}
@@ -106,15 +112,29 @@ public class FlightManagerBean {
 
 		return "bookFlySelectFlight";
 	}
-	public String passengerSelection(){
+	public String passengerSelection() {
 		
-
+		space = passengerSelected.indexOf(" ");
+		
+		firstname = passengerSelected.substring(0, space);
+		lastname = passengerSelected.substring(space+1);
+		
+		System.out.println(flight.getId() + "#############################################################################################################################################");
+		
+		try {
+			flight=travel.getFlightFromNumber(flightSelected);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+				
+		passenger=travel.getPassengerFromFirstAndLastName(firstname, lastname);
+		
+		flight.addPassenger(passenger);
 		
 		return "flightBooked";
 	}
 	
-
-
 	public String createFlight() {
 
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
@@ -123,7 +143,7 @@ public class FlightManagerBean {
 			date = formatter.parse(dateInString);
 		} catch (ParseException e1) {
 			// TODO Auto-generated catch block
-			e1.printStackTrace();
+			return "dateError";
 		}
 
 		departure = travel.getDepartureAirportByIATA(departureIataSelected);
@@ -337,5 +357,45 @@ public class FlightManagerBean {
 	public void setPassengerSelected(String passengerSelected) {
 		this.passengerSelected = passengerSelected;
 	}
-	
+
+	public Flight getFlight() {
+		return flight;
+	}
+
+	public void setFlight(Flight flight) {
+		this.flight = flight;
+	}
+
+	public Passenger getPassenger() {
+		return passenger;
+	}
+
+	public void setPassenger(Passenger passenger) {
+		this.passenger = passenger;
+	}
+
+	public String getFirstname() {
+		return firstname;
+	}
+
+	public void setFirstname(String firstname) {
+		this.firstname = firstname;
+	}
+
+	public String getLastname() {
+		return lastname;
+	}
+
+	public void setLastname(String lastname) {
+		this.lastname = lastname;
+	}
+
+	public int getSpace() {
+		return space;
+	}
+
+	public void setSpace(int space) {
+		this.space = space;
+	}
+		
 }

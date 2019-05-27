@@ -20,7 +20,6 @@ public interface Travel {
 	
 	List<Flight> getFlights();
 	
-	//à supprimer normalement
 	List<Flight> getFlightsFromDepartureAndArrival(Departure departure, Arrival arrival, Date date);
 	
 	List<Passenger> getPassengers();
@@ -34,6 +33,10 @@ public interface Travel {
 	void createDeparture(Departure newDeparture) throws Exception;
 	
 	void createArrival(Arrival newArrival) throws Exception;
+	
+	Flight getFlightFromNumber(String number);
+	
+	Passenger getPassengerFromFirstAndLastName(String firstname, String lastname);
 	
 	Departure getDepartureAirportByIATA(String iata);
 	

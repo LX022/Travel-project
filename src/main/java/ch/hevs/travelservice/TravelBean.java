@@ -104,6 +104,24 @@ public class TravelBean implements Travel{
 		query.setParameter("iata", iata).getResultList();
 		
 		return (Arrival) query.getSingleResult();
-	}	
+	}
+
+	@Override
+	public Flight getFlightFromNumber(String flightnumber) {
+		// TODO Auto-generated method stub
+		Query query = em.createQuery("SELECT f FROM Flight f where f.flightnumber = :flightnumber");
+		query.setParameter("flightnumber", flightnumber).getResultList();
+		
+		return (Flight) query.getSingleResult();
+	}
+
+	@Override
+	public Passenger getPassengerFromFirstAndLastName(String firstname, String lastname) {
+		// TODO Auto-generated method stub
+		Query query = em.createQuery("SELECT p FROM Passenger p where p.firstname = :firstname and p.lastname = :lastname");
+		query.setParameter("firstname", firstname).setParameter("lastname", lastname).getResultList();
+		
+		return (Passenger) query.getSingleResult();
+	}
 	
 }
