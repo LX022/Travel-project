@@ -20,6 +20,7 @@ public class AirportBean {
 	private Travel travel;
 	private String creationResult;
 	private List<Departure> departures;
+	private List<Arrival> arrivals;
 
 	@PostConstruct
 	public void initialize() throws NamingException {
@@ -34,6 +35,7 @@ public class AirportBean {
 		this.gate = "gate";
 		
 		departures = travel.getDepartures();
+		arrivals = travel.getArrivals();
 	}
 
 	public String createDepartureAirport() {
@@ -135,6 +137,14 @@ public class AirportBean {
 
 	public List<Departure> getDepartures() {
 		return departures;
+	}
+
+	public List<Arrival> getArrivals() {
+		return arrivals;
+	}
+
+	public void setArrivals(List<Arrival> arrival) {
+		this.arrivals = arrival;
 	}
 	
 }
