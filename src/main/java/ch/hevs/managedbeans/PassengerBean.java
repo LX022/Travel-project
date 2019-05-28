@@ -1,5 +1,7 @@
 package ch.hevs.managedbeans;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -21,6 +23,7 @@ public class PassengerBean
     private String creationResult;
 	private Travel travel;
 	private int miles;
+	private List<Passenger> passengers;
 
     
     @PostConstruct
@@ -36,6 +39,8 @@ public class PassengerBean
 		this.lastname = "mon nom de famille";
 		this.city = "mon adresse";
 		this.zipcode = "mon zip code";
+		
+		passengers = travel.getPassengers();
     }
     
     public String createPassenger() {
@@ -107,5 +112,13 @@ public class PassengerBean
 
 	public void setMiles(int miles) {
 		this.miles = miles;
-	}	
+	}
+
+	public List<Passenger> getPassengers() {
+		return passengers;
+	}
+
+	public void setPassengers(List<Passenger> passengers) {
+		this.passengers = passengers;
+	}
 }
