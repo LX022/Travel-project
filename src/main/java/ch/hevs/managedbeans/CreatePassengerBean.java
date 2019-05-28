@@ -46,11 +46,8 @@ public class CreatePassengerBean
     		p.setLastname(lastname);
     		p.setcity(city);
     		p.setZipcode(zipcode);
-    		
-
-    		
-    		
-    		
+    		p.setMiles(0);
+ 
     		//customerDirectory.createPassenger(p);
     		this.creationResult ="Success!";
     		travel.createPassenger(p);
