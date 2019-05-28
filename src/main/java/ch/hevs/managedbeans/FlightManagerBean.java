@@ -159,7 +159,6 @@ public class FlightManagerBean {
 			f.setPrice(price);
 			f.setNumberOfPassengers(numberOfPassengers);
 
-			// Problème pour ajouter les FK
 			f.setDeparture(departure);
 			f.setArrival(arrival);
 
