@@ -154,5 +154,21 @@
 				<to-view-id>/flightBooked.xhtml</to-view-id>
 			</navigation-case>
 		</navigation-rule>
+		<navigation-rule>
+			<display-name>welcomeTravel.xhtml</display-name>
+			<from-view-id>/welcomeTravel.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>departureAirports</from-outcome>
+				<to-view-id>/departureAirports.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
+			<display-name>departureAirports.xhtml</display-name>
+			<from-view-id>/departureAirports.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>welcomeTravel</from-outcome>
+				<to-view-id>/welcomeTravel.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
 
 </faces-config>

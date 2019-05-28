@@ -34,6 +34,8 @@ public interface Travel {
 	
 	void createArrival(Arrival newArrival) throws Exception;
 	
+	void deleteDepartureFromIataArrivalAirport(String iata);
+	
 	Flight getFlightFromNumber(String number);
 	
 	Passenger getPassengerFromFirstAndLastName(String firstname, String lastname);

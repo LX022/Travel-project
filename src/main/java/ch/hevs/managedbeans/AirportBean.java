@@ -1,5 +1,7 @@
 package ch.hevs.managedbeans;
 
+import java.util.List;
+
 import javax.annotation.PostConstruct;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
@@ -17,6 +19,7 @@ public class AirportBean {
 	private String gate;
 	private Travel travel;
 	private String creationResult;
+	private List<Departure> departures;
 
 	@PostConstruct
 	public void initialize() throws NamingException {
@@ -29,6 +32,8 @@ public class AirportBean {
 		this.city = "city";
 		this.country = "country";
 		this.gate = "gate";
+		
+		departures = travel.getDepartures();
 	}
 
 	public String createDepartureAirport() {
@@ -67,6 +72,14 @@ public class AirportBean {
 
 		return "showCreateAirportResult";
 	}
+	
+	public String deleteDepartureAirport(String iata){
+		travel.deleteDepartureFromIataArrivalAirport(iata);
+		
+		
+		return "showCreateAirportResult";
+	}
+
 
 	public String getIata() {
 		return iata;
@@ -115,4 +128,13 @@ public class AirportBean {
 	public void setCreationResult(String creationResult) {
 		this.creationResult = creationResult;
 	}
+
+	public void setDepartures(List<Departure> departures) {
+		this.departures = departures;
+	}
+
+	public List<Departure> getDepartures() {
+		return departures;
+	}
+	
 }

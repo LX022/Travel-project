@@ -123,5 +123,12 @@ public class TravelBean implements Travel{
 		
 		return (Passenger) query.getSingleResult();
 	}
+
+	@Override
+	public void deleteDepartureFromIataArrivalAirport(String iata) {
+		// TODO Auto-generated method stub
+		em.createQuery("DELETE FROM Departure d where d.iata = :iata").setParameter("iata", iata).executeUpdate();
+	
+	}
 	
 }
