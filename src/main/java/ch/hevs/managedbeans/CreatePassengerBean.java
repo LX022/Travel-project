@@ -20,6 +20,7 @@ public class CreatePassengerBean
 	private String zipcode;
     private String creationResult;
 	private Travel travel;
+	private int miles;
 
     
     @PostConstruct
@@ -102,7 +103,12 @@ public class CreatePassengerBean
 	public void setCreationResult(String creationResult) {
 		this.creationResult = creationResult;
 	}
-    
-	
-	
+
+	public int getMiles() {
+		return miles;
+	}
+
+	public void setMiles(int miles) {
+		this.miles = miles;
+	}	
 }

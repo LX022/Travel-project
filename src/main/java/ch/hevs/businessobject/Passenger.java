@@ -23,6 +23,7 @@ public class Passenger {
 	private String lastname;	
 	private String city;
 	private String zipcode;
+	private int miles;
 
 	// relations
 	@ManyToMany(mappedBy="passengers", cascade= CascadeType.PERSIST)
@@ -77,17 +78,30 @@ public class Passenger {
 	public void setFlights(List<Flight> flights) {
 		this.flights = flights;
 	}
+	
+	public int getMiles() {
+		return miles;
+	}
+
+	public void setMiles(int miles) {
+		this.miles = miles;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
 
 	// constructors
 	public Passenger() {
 		this.flights = new ArrayList<Flight>();
 	}
 	
-	public Passenger(String firstname, String lastname, String city, String zipcode) {
+	public Passenger(String firstname, String lastname, String city, String zipcode, int miles) {
 		this.firstname = firstname;
 		this.lastname = lastname;
 		this.city = city;
 		this.zipcode = zipcode;
+		this.miles = miles;
 		this.flights = new ArrayList <Flight>();
 	}
 	
