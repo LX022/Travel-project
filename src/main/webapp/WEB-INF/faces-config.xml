@@ -23,14 +23,6 @@
 		<display-name>welcomeTravel.xhtml</display-name>
 		<from-view-id>/welcomeTravel.xhtml</from-view-id>
 		<navigation-case>
-			<from-outcome>bookFly</from-outcome>
-			<to-view-id>/bookFly.xhtml</to-view-id>
-		</navigation-case>
-	</navigation-rule>
-	<navigation-rule>
-		<display-name>welcomeTravel.xhtml</display-name>
-		<from-view-id>/welcomeTravel.xhtml</from-view-id>
-		<navigation-case>
 			<from-outcome>createPassenger</from-outcome>
 			<to-view-id>/createPassenger.xhtml</to-view-id>
 		</navigation-case>
@@ -116,30 +108,6 @@
 			</navigation-case>
 		</navigation-rule>
 		<navigation-rule>
-			<display-name>bookFly.xhtml</display-name>
-			<from-view-id>/bookFly.xhtml</from-view-id>
-			<navigation-case>
-				<from-outcome>#{FlightBean.flightSelection}</from-outcome>
-				<to-view-id>/bookFlySelectFlight.xhtml</to-view-id>
-			</navigation-case>
-		</navigation-rule>
-		<navigation-rule>
-			<display-name>bookFly.xhtml</display-name>
-			<from-view-id>/bookFly.xhtml</from-view-id>
-			<navigation-case>
-				<from-outcome>#{FlightBean.flightSelection}</from-outcome>
-				<to-view-id>/dateError.xhtml</to-view-id>
-			</navigation-case>
-		</navigation-rule>
-		<navigation-rule>
-			<display-name>bookFlySelectFlight.xhtml</display-name>
-			<from-view-id>/bookFlySelectFlight.xhtml</from-view-id>
-			<navigation-case>
-				<from-outcome>#{FlightBean.passengerSelection}</from-outcome>
-				<to-view-id>/flightBooked.xhtml</to-view-id>
-			</navigation-case>
-		</navigation-rule>
-		<navigation-rule>
 			<display-name>createFlight.xhtml</display-name>
 			<from-view-id>/createFlight.xhtml</from-view-id>
 			<navigation-case>
@@ -152,6 +120,38 @@
 			<from-view-id>/dateError.xhtml</from-view-id>
 			<navigation-case>
 				<to-view-id>/welcomeTravel.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
+			<display-name>bookFlight.xhtml</display-name>
+			<from-view-id>/bookFlight.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>#{FlightBean.flightSelection}</from-outcome>
+				<to-view-id>/dateError.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
+			<display-name>welcomeTravel.xhtml</display-name>
+			<from-view-id>/welcomeTravel.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>bookFlight</from-outcome>
+				<to-view-id>/bookFlight.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
+			<display-name>bookFlight.xhtml</display-name>
+			<from-view-id>/bookFlight.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>#{FlightBean.flightSelection}</from-outcome>
+				<to-view-id>/bookFlightSelectFlight.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
+			<display-name>bookFlightSelectFlight.xhtml</display-name>
+			<from-view-id>/bookFlightSelectFlight.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>#{FlightBean.passengerSelection}</from-outcome>
+				<to-view-id>/flightBooked.xhtml</to-view-id>
 			</navigation-case>
 		</navigation-rule>
 

@@ -110,7 +110,7 @@ public class FlightBean {
 			this.allChoiceFlightsDesignation.add(f.getFlightNumber());
 		}
 
-		return "bookFlySelectFlight";
+		return "bookFlightSelectFlight";
 	}
 	
 	
