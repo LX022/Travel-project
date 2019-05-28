@@ -17,7 +17,7 @@ import ch.hevs.businessobject.Flight;
 import ch.hevs.businessobject.Passenger;
 import ch.hevs.travelservice.Travel;
 
-public class FlightManagerBean {
+public class FlightBean {
 
 	private List<Departure> allDeparture;
 	private List<Arrival> allArrival;

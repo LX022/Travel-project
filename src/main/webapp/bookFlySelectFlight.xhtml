@@ -15,21 +15,21 @@
      			<tr>
           			<th><h:outputText value="Liste des vols disponibles : "></h:outputText></th>
           			<td>
-          				<h:selectOneMenu value="#{flightManagerBean.flightSelected}">
-	        				<f:selectItems value="#{flightManagerBean.allChoiceFlightsDesignation}"/>
+          				<h:selectOneMenu value="#{flightBean.flightSelected}">
+	        				<f:selectItems value="#{flightBean.allChoiceFlightsDesignation}"/>
 	        			</h:selectOneMenu>
           			</td>
      			</tr>
      			<tr>
           			<th><h:outputText value="Enregistrer un client : "></h:outputText></th>
           			<td>
-          				<h:selectOneMenu value="#{flightManagerBean.passengerSelected}">
-	        				<f:selectItems value="#{flightManagerBean.passengersNames}"/>
+          				<h:selectOneMenu value="#{flightBean.passengerSelected}">
+	        				<f:selectItems value="#{flightBean.passengersNames}"/>
 	        			</h:selectOneMenu>
           			</td>
      			</tr>
 			</table>
-			<h:commandButton value="Enregistrer le passager" action="#{flightManagerBean.passengerSelection}"></h:commandButton>
+			<h:commandButton value="Enregistrer le passager" action="#{flightBean.passengerSelection}"></h:commandButton>
      		<br />
         </h:form>
     </ui:define>

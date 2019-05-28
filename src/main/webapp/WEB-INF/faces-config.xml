@@ -5,18 +5,18 @@
     xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-facesconfig_2_2.xsd"
     version="2.2">
 	<managed-bean>
-		<managed-bean-name>createPassengerBean</managed-bean-name>
-		<managed-bean-class>ch.hevs.managedbeans.CreatePassengerBean</managed-bean-class>
+		<managed-bean-name>airportBean</managed-bean-name>
+		<managed-bean-class>ch.hevs.managedbeans.AirportBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
-		<managed-bean-name>createAirportBean</managed-bean-name>
-		<managed-bean-class>ch.hevs.managedbeans.CreateAirportBean</managed-bean-class>
+		<managed-bean-name>passengerBean</managed-bean-name>
+		<managed-bean-class>ch.hevs.managedbeans.PassengerBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
-		<managed-bean-name>flightManagerBean</managed-bean-name>
-		<managed-bean-class>ch.hevs.managedbeans.FlightManagerBean</managed-bean-class>
+		<managed-bean-name>flightBean</managed-bean-name>
+		<managed-bean-class>ch.hevs.managedbeans.FlightBean</managed-bean-class>
 		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<navigation-rule>
@@ -39,7 +39,7 @@
 		<display-name>createPassenger.xhtml</display-name>
 		<from-view-id>/createPassenger.xhtml</from-view-id>
 		<navigation-case>
-			<from-outcome>#{CreatePassengerBean.createPassenger}</from-outcome>
+			<from-outcome>#{PassengerBean.createPassenger}</from-outcome>
 			<to-view-id>/showCreatePassengerResult.xhtml</to-view-id>
 		</navigation-case>
 	</navigation-rule>
@@ -63,7 +63,7 @@
 			<display-name>createDepartureAirport.xhtml</display-name>
 			<from-view-id>/createDepartureAirport.xhtml</from-view-id>
 			<navigation-case>
-				<from-outcome>#{CreateAirportBean.createDepartureAirport}</from-outcome>
+				<from-outcome>#{AirportBean.createDepartureAirport}</from-outcome>
 				<to-view-id>/showCreateAirportResult.xhtml</to-view-id>
 			</navigation-case>
 		</navigation-rule>
@@ -79,7 +79,7 @@
 			<display-name>createArrivalAirport.xhtml</display-name>
 			<from-view-id>/createArrivalAirport.xhtml</from-view-id>
 			<navigation-case>
-				<from-outcome>#{CreateAirportBean.createArrivalAirport}</from-outcome>
+				<from-outcome>#{AirportBean.createArrivalAirport}</from-outcome>
 				<to-view-id>/showCreateAirportResult.xhtml</to-view-id>
 			</navigation-case>
 		</navigation-rule>
@@ -95,7 +95,7 @@
 			<display-name>createFlight.xhtml</display-name>
 			<from-view-id>/createFlight.xhtml</from-view-id>
 			<navigation-case>
-				<from-outcome>#{FlightManagerBean.createFlight}</from-outcome>
+				<from-outcome>#{FlightBean.createFlight}</from-outcome>
 				<to-view-id>/showCreateFlightResult.xhtml</to-view-id>
 			</navigation-case>
 		</navigation-rule>
@@ -119,7 +119,7 @@
 			<display-name>bookFly.xhtml</display-name>
 			<from-view-id>/bookFly.xhtml</from-view-id>
 			<navigation-case>
-				<from-outcome>#{FlightManagerBean.flightSelection}</from-outcome>
+				<from-outcome>#{FlightBean.flightSelection}</from-outcome>
 				<to-view-id>/bookFlySelectFlight.xhtml</to-view-id>
 			</navigation-case>
 		</navigation-rule>
@@ -127,7 +127,7 @@
 			<display-name>bookFly.xhtml</display-name>
 			<from-view-id>/bookFly.xhtml</from-view-id>
 			<navigation-case>
-				<from-outcome>#{FlightManagerBean.flightSelection}</from-outcome>
+				<from-outcome>#{FlightBean.flightSelection}</from-outcome>
 				<to-view-id>/dateError.xhtml</to-view-id>
 			</navigation-case>
 		</navigation-rule>
@@ -135,7 +135,7 @@
 			<display-name>bookFlySelectFlight.xhtml</display-name>
 			<from-view-id>/bookFlySelectFlight.xhtml</from-view-id>
 			<navigation-case>
-				<from-outcome>#{FlightManagerBean.passengerSelection}</from-outcome>
+				<from-outcome>#{FlightBean.passengerSelection}</from-outcome>
 				<to-view-id>/flightBooked.xhtml</to-view-id>
 			</navigation-case>
 		</navigation-rule>

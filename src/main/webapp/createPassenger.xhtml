@@ -14,23 +14,23 @@
         	<table>
      			<tr>
           			<th><h:outputText value="Prénom : "></h:outputText></th>
-          			<td><h:inputText value="#{createPassengerBean.firstname}" maxlength="50" style="width: 100px;"></h:inputText></td>
+          			<td><h:inputText value="#{passengerBean.firstname}" maxlength="50" style="width: 100px;"></h:inputText></td>
      			</tr>
      			<tr>
           			<th><h:outputText value="Nom : "></h:outputText></th>
-          			<td><h:inputText value="#{createPassengerBean.lastname}" maxlength="50" style="width: 100px;"></h:inputText></td>
+          			<td><h:inputText value="#{passengerBean.lastname}" maxlength="50" style="width: 100px;"></h:inputText></td>
      			</tr>
      			<tr>
           			<th><h:outputText value="Ville : "></h:outputText></th>
-          			<td><h:inputText value="#{createPassengerBean.city}" maxlength="50" style="width: 100px;"></h:inputText></td>
+          			<td><h:inputText value="#{passengerBean.city}" maxlength="50" style="width: 100px;"></h:inputText></td>
      			</tr>
      			<tr>
           			<th><h:outputText value="Code postal : "></h:outputText></th>
-          			<td><h:inputText value="#{createPassengerBean.zipcode}" maxlength="50" style="width: 100px;"></h:inputText></td>
+          			<td><h:inputText value="#{passengerBean.zipcode}" maxlength="50" style="width: 100px;"></h:inputText></td>
      			</tr>
 			</table>
     
-     		<h:commandButton value="Enregistrer le nouveau passager" action="#{createPassengerBean.createPassenger}"></h:commandButton>
+     		<h:commandButton value="Enregistrer le nouveau passager" action="#{passengerBean.createPassenger}"></h:commandButton>
      		<br />
         </h:form>
     </ui:define>

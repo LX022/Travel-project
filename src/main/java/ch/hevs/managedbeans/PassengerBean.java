@@ -11,7 +11,7 @@ import ch.hevs.travelservice.Travel;
  * 
  */
 
-public class CreatePassengerBean
+public class PassengerBean
 {
 
 	private String firstname;

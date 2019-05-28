@@ -8,7 +8,7 @@
 
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
     <ui:define name="content">
-        <h:outputLabel value="Votre vol :"></h:outputLabel><h:outputLabel value=" #{flightManagerBean.creationResult}"></h:outputLabel>
+        <h:outputLabel value="Votre vol :"></h:outputLabel><h:outputLabel value=" #{flightBean.creationResult}"></h:outputLabel>
         <br></br>
         <h:form>
         <h:commandLink action="welcomeTravel">

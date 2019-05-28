@@ -9,7 +9,7 @@ import ch.hevs.businessobject.Departure;
 import ch.hevs.businessobject.Passenger;
 import ch.hevs.travelservice.Travel;
 
-public class CreateAirportBean {
+public class AirportBean {
 
 	private String iata;
 	private String city;
@@ -115,9 +115,4 @@ public class CreateAirportBean {
 	public void setCreationResult(String creationResult) {
 		this.creationResult = creationResult;
 	}
-	
-	
-	
-	
-
 }

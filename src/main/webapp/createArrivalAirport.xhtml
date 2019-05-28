@@ -14,20 +14,20 @@
         	<table>
      			<tr>
           			<th><h:outputText value="IATA Code : "></h:outputText></th>
-          			<td><h:inputText value="#{createAirportBean.iata}" maxlength="50" style="width: 100px;"></h:inputText></td>
+          			<td><h:inputText value="#{airportBean.iata}" maxlength="50" style="width: 100px;"></h:inputText></td>
      			</tr>
      			<tr>
           			<th><h:outputText value="City : "></h:outputText></th>
-          			<td><h:inputText value="#{createAirportBean.city}" maxlength="50" style="width: 100px;"></h:inputText></td>
+          			<td><h:inputText value="#{airportBean.city}" maxlength="50" style="width: 100px;"></h:inputText></td>
      			</tr>
      			<tr>
           			<th><h:outputText value="Country : "></h:outputText></th>
-          			<td><h:inputText value="#{createAirportBean.country}" maxlength="50" style="width: 100px;"></h:inputText></td>
+          			<td><h:inputText value="#{airportBean.country}" maxlength="50" style="width: 100px;"></h:inputText></td>
      			</tr>
      			
 			</table>
     
-     		<h:commandButton value="Enregistrer le nouvel aéroport" action="#{createAirportBean.createArrivalAirport}"></h:commandButton>
+     		<h:commandButton value="Enregistrer le nouvel aéroport" action="#{airportBean.createArrivalAirport}"></h:commandButton>
      		<br />
         </h:form>
     </ui:define>
