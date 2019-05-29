@@ -31,6 +31,7 @@ public class FlightBean {
 	
 	private List<String> allChoiceFlightsDesignation;
 	private List<Flight> allChoiceFlights;
+	private List<Flight> flights;
 	private String flightSelected;
 	private Flight flight;
 
@@ -70,6 +71,9 @@ public class FlightBean {
 
 		allChoiceFlightsDesignation = new ArrayList<String>();
 		allChoiceFlights = new ArrayList<Flight>();
+		flights= travel.getFlights();
+		
+
 
 		// initialize airport choices
 		this.allDeparture = travel.getDepartures();
@@ -397,6 +401,14 @@ public class FlightBean {
 
 	public void setSpace(int space) {
 		this.space = space;
+	}
+
+	public List<Flight> getFlights() {
+		return flights;
+	}
+
+	public void setFlights(List<Flight> flights) {
+		this.flights = flights;
 	}
 		
 }

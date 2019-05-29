@@ -1,0 +1,36 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+
+<ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
+	<ui:define name="content">
+		<h:body>
+			<h:form>
+				<h:outputLabel value="Liste des vols :"></h:outputLabel>
+				<table>
+					<tr>
+						<th><h:outputText value="Numéro"></h:outputText></th>
+						<th><h:outputText value="Date"></h:outputText></th>
+						<th><h:outputText value="De"></h:outputText></th>
+						<th><h:outputText value="À"></h:outputText></th>
+					</tr>
+					<ui:repeat value="#{flightBean.flights}" var="flight">
+						<tr>
+							<td><h:outputText value="#{flight.flightNumber}" /></td>
+							<td><h:outputText value="#{flight.date}" /></td>
+							<td><h:outputText value="#{flight.departure.city} (#{flight.departure.iata})" /></td>
+							<td><h:outputText value="#{flight.arrival.city} (#{flight.arrival.iata})" /></td>
+						</tr>
+					</ui:repeat>
+				</table>
+			<h:commandLink action="welcomeTravel">
+         		<h:outputText value="Retour à l'accueil" />
+        	</h:commandLink>
+			</h:form>
+		</h:body>
+	</ui:define>
+</ui:composition>
+</html>
