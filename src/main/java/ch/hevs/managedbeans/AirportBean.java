@@ -75,14 +75,6 @@ public class AirportBean {
 		return "showCreateAirportResult";
 	}
 	
-	public String deleteDepartureAirport(String iata){
-		travel.deleteDepartureFromIataArrivalAirport(iata);
-		
-		
-		return "showCreateAirportResult";
-	}
-
-
 	public String getIata() {
 		return iata;
 	}

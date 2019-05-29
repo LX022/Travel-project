@@ -117,6 +117,14 @@ public class FlightBean {
 		return "bookFlightSelectFlight";
 	}
 	
+	public String flightPassengersList(String id){
+		
+		System.out.println(id);
+		
+		return "";
+		
+	}
+	
 	
 	public String passengerSelection() {
 		
