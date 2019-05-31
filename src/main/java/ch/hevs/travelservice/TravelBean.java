@@ -134,7 +134,6 @@ public class TravelBean implements Travel{
 	@Override
 	public void bookFlight(Flight f) throws Exception {
 		// TODO Auto-generated method stub
-		//em.persist(f);
 		Flight realFlight = em.merge(f);
 
 		
