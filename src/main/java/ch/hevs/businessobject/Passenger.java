@@ -26,7 +26,7 @@ public class Passenger {
 	private int miles;
 
 	// relations
-	@ManyToMany(mappedBy="passengers", cascade= CascadeType.PERSIST)
+	@ManyToMany(mappedBy="passengers", cascade= CascadeType.MERGE)
 	private List<Flight> flights;
 
 	// getters setters

@@ -130,5 +130,14 @@ public class TravelBean implements Travel{
 		em.createQuery("DELETE FROM Departure d where d.iata = :iata").setParameter("iata", iata).executeUpdate();
 	
 	}
+
+	@Override
+	public void bookFlight(Flight f) throws Exception {
+		// TODO Auto-generated method stub
+		//em.persist(f);
+		Flight realFlight = em.merge(f);
+
+		
+	}
 	
 }

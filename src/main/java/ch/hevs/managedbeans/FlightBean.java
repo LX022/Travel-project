@@ -16,6 +16,7 @@ import ch.hevs.businessobject.Departure;
 import ch.hevs.businessobject.Flight;
 import ch.hevs.businessobject.Passenger;
 import ch.hevs.travelservice.Travel;
+import static java.lang.Math.toIntExact;
 
 public class FlightBean {
 
@@ -144,7 +145,25 @@ public class FlightBean {
 				
 		passenger=travel.getPassengerFromFirstAndLastName(firstname, lastname);
 		
+		//Correction des miles
+		int currentMiles = passenger.getMiles();
+		long milesAdded = flight.getPrice() / 2;
+		int newMiles = currentMiles + toIntExact(milesAdded);
+		
+		passenger.setMiles(newMiles);
 		flight.addPassenger(passenger);
+		
+		
+		
+		try {
+			travel.bookFlight(flight);
+		} catch (Exception e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		
+		
 		
 		return "flightBooked";
 	}

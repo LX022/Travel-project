@@ -36,7 +36,7 @@ public class Flight {
 	@JoinColumn(name = "FK_ARRIVAL")
 	private Arrival arrival;
 		
-	@ManyToMany(cascade= CascadeType.PERSIST)
+	@ManyToMany(cascade= CascadeType.MERGE)
 	private List<Passenger> passengers;
 
 	// getters setters

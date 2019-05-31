@@ -36,6 +36,8 @@ public interface Travel {
 	
 	void deleteDepartureFromIataArrivalAirport(String iata);
 	
+	void bookFlight(Flight f) throws Exception;;
+	
 	Flight getFlightFromNumber(String number);
 	
 	Passenger getPassengerFromFirstAndLastName(String firstname, String lastname);
