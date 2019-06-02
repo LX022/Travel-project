@@ -24,7 +24,7 @@
 							<td><h:outputText value="#{flight.date}" /></td>
 							<td><h:outputText value="#{flight.departure.city} (#{flight.departure.iata})" /></td>
 							<td><h:outputText value="#{flight.arrival.city} (#{flight.arrival.iata})" /></td>
-							<td><h:commandButton value="Liste des passagers" action="#{flightBean.flightPassengersList({flight.id})}" >
+							<td><h:commandButton value="Liste des passagers" action="#{flightBean.flightPassengersList(flight.id)}" >
 							</h:commandButton></td>
 						</tr>
 					</ui:repeat>

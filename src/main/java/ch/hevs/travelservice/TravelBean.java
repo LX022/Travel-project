@@ -138,5 +138,14 @@ public class TravelBean implements Travel{
 
 		
 	}
+
+	@Override
+	public Flight getFlightFromId(Long id) {
+		// TODO Auto-generated method stub
+		Query query = em.createQuery("SELECT f FROM Flight f where f.id = :id");
+		query.setParameter("id", id).getResultList();
+		
+		return (Flight) query.getSingleResult();
+	}
 	
 }

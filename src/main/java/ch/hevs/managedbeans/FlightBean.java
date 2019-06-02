@@ -3,7 +3,6 @@ package ch.hevs.managedbeans;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
-import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -118,11 +117,13 @@ public class FlightBean {
 		return "bookFlightSelectFlight";
 	}
 	
-	public String flightPassengersList(String id){
+	public String flightPassengersList(Long id){
 		
-		System.out.println(id);
+		flight=travel.getFlightFromId(id);
 		
-		return "";
+		passengers = flight.getPassengers();
+		
+		return "flightPassengers";
 		
 	}
 	
