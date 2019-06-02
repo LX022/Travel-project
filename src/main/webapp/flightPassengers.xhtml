@@ -1,4 +1,4 @@
-passengers.xhtml<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -10,7 +10,7 @@ passengers.xhtml<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 	<ui:define name="content">
 		<h:body>
 			<h:form>
-				<h:outputLabel value="Liste des clients :"></h:outputLabel>
+				<h:outputLabel value="Liste des passagers :"></h:outputLabel>
 				<table>
 					<tr>
 						<th><h:outputText value="Prénom"></h:outputText></th>
@@ -18,7 +18,7 @@ passengers.xhtml<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
 						<th><h:outputText value="Ville"></h:outputText></th>
 						<th><h:outputText value="Miles"></h:outputText></th>
 					</tr>
-					<ui:repeat value="#{passengerBean.passengers}" var="passenger">
+					<ui:repeat value="#{flightBean.passengers}" var="passenger">
 						<tr>
 							<td><h:outputText value="#{passenger.firstname}" /></td>
 							<td><h:outputText value="#{passenger.lastname}" /></td>

@@ -40,6 +40,8 @@ public interface Travel {
 	
 	Flight getFlightFromNumber(String number);
 	
+	Flight getFlightFromId(Long id);
+	
 	Passenger getPassengerFromFirstAndLastName(String firstname, String lastname);
 	
 	Departure getDepartureAirportByIATA(String iata);

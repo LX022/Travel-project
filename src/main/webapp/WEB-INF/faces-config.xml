@@ -218,5 +218,13 @@
 				<to-view-id>/welcomeTravel.xhtml</to-view-id>
 			</navigation-case>
 		</navigation-rule>
+		<navigation-rule>
+			<display-name>flights.xhtml</display-name>
+			<from-view-id>/flights.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>flightPassengersList</from-outcome>
+				<to-view-id>/flightPassengers.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
 
 </faces-config>
