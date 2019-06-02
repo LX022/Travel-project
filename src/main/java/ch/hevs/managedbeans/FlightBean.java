@@ -139,6 +139,7 @@ public class FlightBean {
 						
 		try {
 			flight=travel.getFlightFromNumber(flightSelected);
+			System.out.println(flightSelected);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();

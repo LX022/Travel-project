@@ -7,17 +7,17 @@
 	<managed-bean>
 		<managed-bean-name>airportBean</managed-bean-name>
 		<managed-bean-class>ch.hevs.managedbeans.AirportBean</managed-bean-class>
-		<managed-bean-scope>session</managed-bean-scope>
+		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
 		<managed-bean-name>passengerBean</managed-bean-name>
 		<managed-bean-class>ch.hevs.managedbeans.PassengerBean</managed-bean-class>
-		<managed-bean-scope>session</managed-bean-scope>
+		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 	<managed-bean>
 		<managed-bean-name>flightBean</managed-bean-name>
 		<managed-bean-class>ch.hevs.managedbeans.FlightBean</managed-bean-class>
-		<managed-bean-scope>session</managed-bean-scope>
+		<managed-bean-scope>request</managed-bean-scope>
 	</managed-bean>
 	<navigation-rule>
 		<display-name>welcomeTravel.xhtml</display-name>
@@ -224,6 +224,14 @@
 			<navigation-case>
 				<from-outcome>flightPassengersList</from-outcome>
 				<to-view-id>/flightPassengers.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
+			<display-name>flightBooked.xhtml</display-name>
+			<from-view-id>/flightBooked.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>welcomeTravel</from-outcome>
+				<to-view-id>/welcomeTravel.xhtml</to-view-id>
 			</navigation-case>
 		</navigation-rule>
 

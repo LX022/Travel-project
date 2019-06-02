@@ -6,6 +6,7 @@ import java.util.List;
 import javax.ejb.Stateless;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
+import javax.persistence.PersistenceContextType;
 import javax.persistence.Query;
 
 import ch.hevs.businessobject.Airport;
@@ -42,7 +43,7 @@ public class TravelBean implements Travel{
 	@Override
 	public List<Passenger> getPassengers() {
 		// TODO Auto-generated method stub
-		return em.createQuery("SELECT p FROM Passenger p").getResultList();
+		return em.createQuery("SELECT p FROM Passenger AS p").getResultList();
 	}
 
 	@Override
