@@ -17,7 +17,7 @@
 	<managed-bean>
 		<managed-bean-name>flightBean</managed-bean-name>
 		<managed-bean-class>ch.hevs.managedbeans.FlightBean</managed-bean-class>
-		<managed-bean-scope>request</managed-bean-scope>
+		<managed-bean-scope>session</managed-bean-scope>
 	</managed-bean>
 	<navigation-rule>
 		<display-name>welcomeTravel.xhtml</display-name>
@@ -134,7 +134,7 @@
 			<display-name>welcomeTravel.xhtml</display-name>
 			<from-view-id>/welcomeTravel.xhtml</from-view-id>
 			<navigation-case>
-				<from-outcome>bookFlight</from-outcome>
+				<from-outcome>#{FlightBean.listsInitialisation}</from-outcome>
 				<to-view-id>/bookFlight.xhtml</to-view-id>
 			</navigation-case>
 		</navigation-rule>

@@ -68,34 +68,39 @@ public class FlightBean {
 		this.aircraftModel = "aircraftModel";
 		this.price = 1000;
 		this.numberOfPassengers = 300;
-
-		allChoiceFlightsDesignation = new ArrayList<String>();
-		allChoiceFlights = new ArrayList<Flight>();
-		flights= travel.getFlights();
-		
-
-
-		// initialize airport choices
-		this.allDeparture = travel.getDepartures();
-		this.allDepartureIata = new ArrayList<String>();
-		for (Departure d : allDeparture) {
-			this.allDepartureIata.add(d.getIata());
-		}
-
-		this.allArrival = travel.getArrivals();
-		this.allArrivalIata = new ArrayList<String>();
-		for (Arrival a : allArrival) {
-			this.allArrivalIata.add(a.getIata());
-		}
-
-		this.passengers = travel.getPassengers();
-		this.passengersNames = new ArrayList<String>();
-		for (Passenger p : passengers){
-			this.passengersNames.add(p.getFirstname() +" "+p.getLastname());
-		}
 		
 	}
+	
+	public String listsInitialisation(){
+		
+		allDeparture= new ArrayList<Departure>();
+		allArrival= new ArrayList<Arrival>();
+		flights = new ArrayList<Flight>();
+		flights= travel.getFlights();
+		passengers = new ArrayList<Passenger>();
+		
+		allDeparture = travel.getDepartures();
+		allDepartureIata = new ArrayList<String>();
+		for (Departure d : allDeparture) {
+			allDepartureIata.add(d.getIata());
 
+		}
+
+		allArrival = travel.getArrivals();
+		allArrivalIata = new ArrayList<String>();
+		for (Arrival a : allArrival) {
+			allArrivalIata.add(a.getIata());
+		}
+		
+		passengers = travel.getPassengers();
+		passengersNames = new ArrayList<String>();
+		for (Passenger p : passengers){
+			passengersNames.add(p.getFirstname() +" "+p.getLastname());
+		}
+		
+		return "bookFlight";
+	}
+	
 	public String flightSelection() {
 
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
@@ -110,6 +115,8 @@ public class FlightBean {
 		}
 
 		allChoiceFlights = travel.getFlightsFromDepartureAndArrival(departure, arrival, date);
+		allChoiceFlightsDesignation = new ArrayList<String>();
+		
 		for (Flight f : allChoiceFlights) {
 			this.allChoiceFlightsDesignation.add(f.getFlightNumber());
 		}
@@ -120,6 +127,8 @@ public class FlightBean {
 	public String flightPassengersList(Long id){
 		
 		flight=travel.getFlightFromId(id);
+		
+		passengers = new ArrayList<Passenger>();
 		
 		passengers = flight.getPassengers();
 		
@@ -163,9 +172,6 @@ public class FlightBean {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
-		
 		
 		return "flightBooked";
 	}
