@@ -4,6 +4,8 @@ import java.util.Date;
 import java.util.List;
 
 import javax.ejb.Stateless;
+import javax.ejb.TransactionAttribute;
+import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.persistence.PersistenceContextType;
@@ -132,6 +134,7 @@ public class TravelBean implements Travel{
 	
 	}
 
+	//@TransactionAttribute(value = TransactionAttributeType.REQUIRED)
 	@Override
 	public void bookFlight(Flight f) throws Exception {
 		// TODO Auto-generated method stub
