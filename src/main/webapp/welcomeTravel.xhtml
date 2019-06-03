@@ -1,4 +1,5 @@
-	<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
@@ -12,62 +13,70 @@
 			style="color:white"></h:outputLabel>
 		<br></br>
 		<h:form>
-		<table>
-		<tr>
-			<th style="border:none"></th>
-			<th><h:graphicImage url="/images/create.png" width="50" height="50" /></th>
-			<th><h:graphicImage url="/images/list.png" width="50" height="50" /></th>
-		</tr>
-		
-		<tr>
-			<td><h:graphicImage url="/images/passenger.png" width="50" height="50" /></td>
-			<td><h:commandLink action="createPassenger">
-						<h:outputText value="Ajouter un passager" />
-					</h:commandLink></td>
+			<table>
+				<tr>
+					<th style="border: none"></th>
+					<th><h:graphicImage url="/images/create.png" width="50"
+							height="50" /></th>
+					<th><h:graphicImage url="/images/list.png" width="50"
+							height="50" /></th>
+				</tr>
+
+				<tr>
+					<td><h:graphicImage url="/images/passenger.png" width="50"
+							height="50" /></td>
+					<td><h:commandLink action="createPassenger">
+							<h:outputText value="Ajouter un passager" />
+						</h:commandLink></td>
 					<td><h:commandLink action="passengers">
-						<h:outputText value="Afficher la liste des clients" />
-					</h:commandLink></td>
-		</tr>
-		
-		<tr>
-			<td><h:graphicImage url="/images/tickets.png" width="50" height="50" /></td>
-			<td><h:commandLink action="bookFlight">
-						<h:outputText value="Réserver un vol" />
-					</h:commandLink></td>
-		</tr>
-		
-		<tr>
-			<td><h:graphicImage url="/images/departure.png" width="50" height="50" /></td>
-			<td><h:commandLink action="createDepartureAirport">
-						<h:outputText value="Créer un aéroport de départ" />
-					</h:commandLink></td>
+							<h:outputText value="Afficher la liste des clients" />
+						</h:commandLink></td>
+				</tr>
+
+
+				<tr>
+					<td><h:graphicImage url="/images/departure.png" width="50"
+							height="50" /></td>
+					<td><h:commandLink action="createDepartureAirport">
+							<h:outputText value="Créer un aéroport de départ" />
+						</h:commandLink></td>
 					<td><h:commandLink action="departureAirports">
-						<h:outputText value="Afficher les aéroports de départ" />
-					</h:commandLink></td>
-		</tr>
-		
-		<tr>
-			<td><h:graphicImage url="/images/arrival.png" width="50" height="50" /></td>
-			<td><h:commandLink action="createArrivalAirport">
-						<h:outputText value="Créer un aéroport d'arrivée" />
-					</h:commandLink></td>
+							<h:outputText value="Afficher les aéroports de départ" />
+						</h:commandLink></td>
+				</tr>
+
+				<tr>
+					<td><h:graphicImage url="/images/arrival.png" width="50"
+							height="50" /></td>
+					<td><h:commandLink action="createArrivalAirport">
+							<h:outputText value="Créer un aéroport d'arrivée" />
+						</h:commandLink></td>
 					<td><h:commandLink action="arrivalAirports">
-						<h:outputText value="Afficher les aéroports d'arrivée" />
-					</h:commandLink></td>
-		</tr>
-		
-		<tr>
-			<td><h:graphicImage url="/images/flight.png" width="50"	height="50" /></td>
-			<td><h:commandLink action="createFlight">
-						<h:outputText value="Ajouter un vol" />
-					</h:commandLink></td>
+							<h:outputText value="Afficher les aéroports d'arrivée" />
+						</h:commandLink></td>
+				</tr>
+
+				<tr>
+					<td><h:graphicImage url="/images/flight.png" width="50"
+							height="50" /></td>
+					<td><h:commandLink action="createFlight">
+							<h:outputText value="Ajouter un vol" />
+						</h:commandLink></td>
 					<td><h:commandLink action="flights">
-						<h:outputText value="Afficher les vols" />
-					</h:commandLink></td>
-		</tr>
-		
-		</table>
-</h:form>
+							<h:outputText value="Afficher les vols" />
+						</h:commandLink></td>
+				</tr>
+
+				<tr>
+					<td><h:graphicImage url="/images/tickets.png" width="50"
+							height="50" /></td>
+					<td colspan="2" align="center"><h:commandLink action="bookFlight">
+							<h:outputText value="Réserver un vol" />
+						</h:commandLink></td>
+				</tr>
+
+			</table>
+		</h:form>
 
 	</ui:define>
 </ui:composition>
