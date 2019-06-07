@@ -41,14 +41,10 @@ public class AirportBean {
 	public String createDepartureAirport() {
 
 		try {
-			Departure d = new Departure();
-			d.setIata(iata);
-			d.setCity(city);
-			d.setCountry(country);
-			d.setGate(gate);
+			
 
 			this.creationResult = "Success!";
-			travel.createDeparture(d);
+			travel.createDeparture(iata, city, country, gate);
 
 		} catch (Exception e) {
 			e.printStackTrace();

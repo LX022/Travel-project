@@ -69,6 +69,10 @@ public class FlightBean {
 		this.price = 1000;
 		this.numberOfPassengers = 300;
 		
+		
+		listsInitialisation();
+		
+		
 	}
 	
 	public String listsInitialisation(){
@@ -99,6 +103,12 @@ public class FlightBean {
 		}
 		
 		return "bookFlight";
+	}
+	
+	public String showflights() {
+		
+		listsInitialisation();
+		return "flights";
 	}
 	
 	public String flightSelection() {
@@ -140,7 +150,6 @@ public class FlightBean {
 	public String passengerSelection() {
 		
 		space = passengerSelected.indexOf(" ");
-		System.out.println("space : " + space);
 		
 		firstname = passengerSelected.substring(0, space);		
 		
@@ -148,7 +157,6 @@ public class FlightBean {
 						
 		try {
 			flight=travel.getFlightFromNumber(flightSelected);
-			System.out.println(flightSelected);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -191,18 +199,10 @@ public class FlightBean {
 		arrival = travel.getArrivalAirportByIATA(arrivalIataSelected);
 
 		try {
-			Flight f = new Flight();
-			f.setFlightNumber(flightNumber);
-			f.setDate(date);
-			f.setAircraftModel(aircraftModel);
-			f.setPrice(price);
-			f.setNumberOfPassengers(numberOfPassengers);
 
-			f.setDeparture(departure);
-			f.setArrival(arrival);
 
 			this.creationResult = "Success!";
-			travel.createFlight(f);
+			travel.createFlight(flightNumber, date, aircraftModel, price, numberOfPassengers, departure, arrival);
 
 		} catch (Exception e) {
 			e.printStackTrace();

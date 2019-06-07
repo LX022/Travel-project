@@ -28,9 +28,9 @@ public interface Travel {
 	
 	void removePassenger(Passenger deletePassenger) throws Exception;
 	
-	void createFlight(Flight newFlight) throws Exception;
+	void createFlight(String flightNumber,Date date,String  aircraftModel,long price,int numberOfPassengers,Departure departure,Arrival arrival) throws Exception;
 	
-	void createDeparture(Departure newDeparture) throws Exception;
+	void createDeparture(String iata, String city, String country, String gate) throws Exception;
 	
 	void createArrival(Arrival newArrival) throws Exception;
 	

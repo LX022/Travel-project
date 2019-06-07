@@ -206,7 +206,7 @@
 			<display-name>welcomeTravel.xhtml</display-name>
 			<from-view-id>/welcomeTravel.xhtml</from-view-id>
 			<navigation-case>
-				<from-outcome>flights</from-outcome>
+				<from-outcome>#{FlightBean.showflights}</from-outcome>
 				<to-view-id>/flights.xhtml</to-view-id>
 			</navigation-case>
 		</navigation-rule>

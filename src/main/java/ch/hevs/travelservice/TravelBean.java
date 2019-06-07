@@ -74,15 +74,32 @@ public class TravelBean implements Travel{
 	}
 
 	@Override
-	public void createFlight(Flight newFlight) throws Exception {
+	public void createFlight(String flightNumber,Date date,String  aircraftModel,long price,int numberOfPassengers,Departure departure,Arrival arrival) throws Exception {
 		// TODO Auto-generated method stub
-		em.persist(newFlight);
+		Flight f = new Flight();
+		f.setFlightNumber(flightNumber);
+		f.setDate(date);
+		f.setAircraftModel(aircraftModel);
+		f.setPrice(price);
+		f.setNumberOfPassengers(numberOfPassengers);
+
+		f.setDeparture(departure);
+		f.setArrival(arrival);
+		
+		em.persist(f);
 	}
 
 	@Override
-	public void createDeparture(Departure newDeparture) throws Exception {
+	public void createDeparture(String iata, String city, String country, String gate) throws Exception {
 		// TODO Auto-generated method stub
-		em.persist(newDeparture);
+		Departure d = new Departure();
+		d.setIata(iata);
+		d.setCity(city);
+		d.setCountry(country);
+		d.setGate(gate);
+		
+		
+		em.persist(d);
 	}
 
 	@Override
@@ -134,7 +151,7 @@ public class TravelBean implements Travel{
 	
 	}
 
-	//@TransactionAttribute(value = TransactionAttributeType.REQUIRED)
+	@TransactionAttribute(value = TransactionAttributeType.REQUIRED)
 	@Override
 	public void bookFlight(Flight f) throws Exception {
 		// TODO Auto-generated method stub
