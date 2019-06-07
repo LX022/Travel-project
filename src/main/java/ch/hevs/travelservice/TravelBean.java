@@ -1,5 +1,7 @@
 package ch.hevs.travelservice;
 
+import static java.lang.Math.toIntExact;
+
 import java.util.Date;
 import java.util.List;
 
@@ -103,9 +105,15 @@ public class TravelBean implements Travel{
 	}
 
 	@Override
-	public void createArrival(Arrival newArrival) throws Exception {
+	public void createArrival(String iata, String city, String country) throws Exception {
 		// TODO Auto-generated method stub
-		em.persist(newArrival);
+		Arrival a = new Arrival();
+		a.setIata(iata);
+		a.setCity(city);
+		a.setCountry(country);
+		
+		
+		em.persist(a);
 	}
 
 	@Override
@@ -153,9 +161,20 @@ public class TravelBean implements Travel{
 
 	@TransactionAttribute(value = TransactionAttributeType.REQUIRED)
 	@Override
-	public void bookFlight(Flight f) throws Exception {
+	public void bookFlight(Passenger passenger,Flight flight) throws Exception {
 		// TODO Auto-generated method stub
-		Flight realFlight = em.merge(f);
+
+		
+		//Correction des miles
+		int currentMiles = passenger.getMiles();
+		long milesAdded = flight.getPrice() / 2;
+		int newMiles = currentMiles + toIntExact(milesAdded);
+		
+		passenger.setMiles(newMiles);
+		flight.addPassenger(passenger);
+
+		
+		Flight realFlight = em.merge(flight);
 
 		
 	}

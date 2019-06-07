@@ -164,18 +164,8 @@ public class FlightBean {
 				
 		passenger=travel.getPassengerFromFirstAndLastName(firstname, lastname);
 		
-		//Correction des miles
-		int currentMiles = passenger.getMiles();
-		long milesAdded = flight.getPrice() / 2;
-		int newMiles = currentMiles + toIntExact(milesAdded);
-		
-		passenger.setMiles(newMiles);
-		flight.addPassenger(passenger);
-		
-		
-		
 		try {
-			travel.bookFlight(flight);
+			travel.bookFlight(passenger, flight);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
@@ -199,7 +189,6 @@ public class FlightBean {
 		arrival = travel.getArrivalAirportByIATA(arrivalIataSelected);
 
 		try {
-
 
 			this.creationResult = "Success!";
 			travel.createFlight(flightNumber, date, aircraftModel, price, numberOfPassengers, departure, arrival);

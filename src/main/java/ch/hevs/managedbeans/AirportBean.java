@@ -41,10 +41,10 @@ public class AirportBean {
 	public String createDepartureAirport() {
 
 		try {
-			
 
-			this.creationResult = "Success!";
+			
 			travel.createDeparture(iata, city, country, gate);
+			this.creationResult = "Success!";
 
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -56,13 +56,8 @@ public class AirportBean {
 	public String createArrivalAirport() {
 
 		try {
-			Arrival a = new Arrival();
-			a.setIata(iata);
-			a.setCity(city);
-			a.setCountry(country);
-
+			travel.createArrival(iata, city, country);
 			this.creationResult = "Success!";
-			travel.createArrival(a);
 
 		} catch (Exception e) {
 			e.printStackTrace();
