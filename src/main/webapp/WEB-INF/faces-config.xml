@@ -63,7 +63,7 @@
 			<display-name>welcomeTravel.xhtml</display-name>
 			<from-view-id>/welcomeTravel.xhtml</from-view-id>
 			<navigation-case>
-				<from-outcome>createArrivalAirport</from-outcome>
+				<from-outcome>#{AirportBean.createArrivalAirportInit}</from-outcome>
 				<to-view-id>/createArrivalAirport.xhtml</to-view-id>
 			</navigation-case>
 		</navigation-rule>
@@ -79,7 +79,7 @@
 			<display-name>welcomeTravel.xhtml</display-name>
 			<from-view-id>/welcomeTravel.xhtml</from-view-id>
 			<navigation-case>
-				<from-outcome>createFlight</from-outcome>
+				<from-outcome>#{FlightBean.createFlightInit}</from-outcome>
 				<to-view-id>/createFlight.xhtml</to-view-id>
 			</navigation-case>
 		</navigation-rule>

@@ -54,7 +54,17 @@ public class AirportBean {
 		if(travel.isAdmin()){
 			return "createDepartureAirport";
 		}else{
-			System.out.println("ljksdfaייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייי");
+			return "welcomeTravel";
+		}
+
+	}
+	
+	public String createArrivalAirportInit() {
+
+		
+		if(travel.isAdmin()){
+			return "createArrivalAirport";
+		}else{
 			return "welcomeTravel";
 		}
 

@@ -17,6 +17,7 @@
 						<th><h:outputText value="Nom"></h:outputText></th>
 						<th><h:outputText value="Ville"></h:outputText></th>
 						<th><h:outputText value="Miles"></h:outputText></th>
+						<th><h:outputText value="N° de carte de crédit"></h:outputText></th>
 					</tr>
 					<ui:repeat value="#{passengerBean.passengers}" var="passenger">
 						<tr>
@@ -24,6 +25,7 @@
 							<td><h:outputText value="#{passenger.lastname}" /></td>
 							<td><h:outputText value="#{passenger.city}" /></td>
 							<td><h:outputText value="#{passenger.miles}" /></td>
+							<td><h:outputText value="#{passenger.creditCard.creditCardNumber}" /></td>
 						</tr>
 					</ui:repeat>
 				</table>

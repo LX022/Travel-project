@@ -19,6 +19,9 @@ public class PassengerBean
 	private String firstname;
 	private String lastname;	
 	private String city;
+	private String creditCardNumber;
+	private String creditCardType;	
+	private String creditCardDate;
 	private String zipcode;
     private String creationResult;
 	private Travel travel;
@@ -39,6 +42,9 @@ public class PassengerBean
 		this.lastname = "mon nom de famille";
 		this.city = "mon adresse";
 		this.zipcode = "mon zip code";
+		this.creditCardDate = "...";
+		this.creditCardNumber = "...";
+		this.creditCardType = "...";
 		
 		passengers = travel.getPassengers();
     }
@@ -50,7 +56,7 @@ public class PassengerBean
  
     		//customerDirectory.createPassenger(p);
     		this.creationResult ="Success!";
-    		travel.createPassenger(firstname, lastname, city, zipcode);
+    		travel.createPassenger(firstname, lastname, city, zipcode, creditCardNumber, creditCardDate, creditCardType);
     		
 
     	} catch (Exception e) {
@@ -116,4 +122,30 @@ public class PassengerBean
 	public void setPassengers(List<Passenger> passengers) {
 		this.passengers = passengers;
 	}
+
+	public String getCreditCardNumber() {
+		return creditCardNumber;
+	}
+
+	public void setCreditCardNumber(String creditCardNumber) {
+		this.creditCardNumber = creditCardNumber;
+	}
+
+	public String getCreditCardType() {
+		return creditCardType;
+	}
+
+	public void setCreditCardType(String creditCardType) {
+		this.creditCardType = creditCardType;
+	}
+
+	public String getCreditCardDate() {
+		return creditCardDate;
+	}
+
+	public void setCreditCardDate(String creditCardDate) {
+		this.creditCardDate = creditCardDate;
+	}
+	
+	
 }

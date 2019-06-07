@@ -29,7 +29,7 @@ public interface Travel {
 	
 	Boolean isAgent();
 	
-	void createPassenger(String firstname, String lastname, String city, String zipcode) throws Exception;
+	void createPassenger(String firstname, String lastname, String city, String zipcode,String creditCardNumber,String creditCardDate, String creditCardType) throws Exception;
 	
 	void removePassenger(Passenger deletePassenger) throws Exception;
 	

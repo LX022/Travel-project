@@ -16,6 +16,7 @@ import javax.persistence.PersistenceContext;
 import javax.persistence.Query;
 
 import ch.hevs.businessobject.Arrival;
+import ch.hevs.businessobject.CreditCard;
 import ch.hevs.businessobject.Departure;
 import ch.hevs.businessobject.Flight;
 import ch.hevs.businessobject.Passenger;
@@ -56,7 +57,7 @@ public class TravelBean implements Travel{
 	}
 
 	@Override
-	public void createPassenger(String firstname, String lastname, String city, String zipcode) throws Exception {
+	public void createPassenger(String firstname, String lastname, String city, String zipcode, String creditCardNumber,String creditCardDate, String creditCardType) throws Exception {
 		// TODO Auto-generated method stub
 		Passenger p = new Passenger();
 		p.setFirstname(firstname);
@@ -64,7 +65,10 @@ public class TravelBean implements Travel{
 		p.setcity(city);
 		p.setZipcode(zipcode);
 		p.setMiles(0);
-		
+		p.setCreditCard(new CreditCard());
+		p.getCreditCard().setCreditCardDate(creditCardDate);
+		p.getCreditCard().setCreditCardNumber(creditCardNumber);
+		p.getCreditCard().setCreditCardType(creditCardType);
 		em.persist(p);
 	}
 

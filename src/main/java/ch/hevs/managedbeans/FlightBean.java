@@ -110,6 +110,18 @@ public class FlightBean {
 		return "bookFlight";
 	}
 	
+	
+	public String createFlightInit() {
+
+		
+		if(travel.isAdmin()){
+			return "createFlight";
+		}else{
+			return "welcomeTravel";
+		}
+
+	}
+	
 	public String showflights() {
 		
 		listsInitialisation();
