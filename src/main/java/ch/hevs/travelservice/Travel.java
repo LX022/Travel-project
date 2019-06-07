@@ -38,9 +38,7 @@ public interface Travel {
 	void createDeparture(String iata, String city, String country, String gate) throws Exception;
 	
 	void createArrival(String iata, String city, String country) throws Exception;
-	
-	void deleteDepartureFromIataArrivalAirport(String iata);
-	
+		
 	void bookFlight(Passenger passenger,Flight flight) throws Exception;
 	
 	void updateNumberOfPassengers( Flight flight);
