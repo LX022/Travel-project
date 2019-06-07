@@ -51,9 +51,16 @@ public class TravelBean implements Travel{
 	}
 
 	@Override
-	public void createPassenger(Passenger newPassenger) throws Exception {
+	public void createPassenger(String firstname, String lastname, String city, String zipcode) throws Exception {
 		// TODO Auto-generated method stub
-		em.persist(newPassenger);
+		Passenger p = new Passenger();
+		p.setFirstname(firstname);
+		p.setLastname(lastname);
+		p.setcity(city);
+		p.setZipcode(zipcode);
+		p.setMiles(0);
+		
+		em.persist(p);
 	}
 
 	@Override

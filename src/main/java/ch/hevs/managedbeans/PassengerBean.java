@@ -46,16 +46,11 @@ public class PassengerBean
     public String createPassenger() {
     	
     	try {
-    		Passenger p = new Passenger();
-    		p.setFirstname(firstname);
-    		p.setLastname(lastname);
-    		p.setcity(city);
-    		p.setZipcode(zipcode);
-    		p.setMiles(0);
+
  
     		//customerDirectory.createPassenger(p);
     		this.creationResult ="Success!";
-    		travel.createPassenger(p);
+    		travel.createPassenger(firstname, lastname, city, zipcode);
     		
 
     	} catch (Exception e) {

@@ -24,7 +24,7 @@ public interface Travel {
 	
 	List<Passenger> getPassengers();
 	
-	void createPassenger(Passenger newPassenger) throws Exception;
+	void createPassenger(String firstname, String lastname, String city, String zipcode) throws Exception;
 	
 	void removePassenger(Passenger deletePassenger) throws Exception;
 	
