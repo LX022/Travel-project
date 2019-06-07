@@ -7,6 +7,9 @@ import java.util.Date;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+import javax.annotation.security.RolesAllowed;
+import javax.ejb.SessionContext;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
@@ -62,6 +65,8 @@ public class FlightBean {
 		// use JNDI to inject reference to bank EJB
 		InitialContext ctx = new InitialContext();
 		travel = (Travel) ctx.lookup("java:global/TRAVEL-0.0.1-SNAPSHOT/TravelBean!ch.hevs.travelservice.Travel");
+		
+
 
 		this.flightNumber = "flightNumber";
 		this.dateInString = "27/05/2019";
@@ -175,7 +180,7 @@ public class FlightBean {
 	}
 	
 	public String createFlight() {
-
+		
 		SimpleDateFormat formatter = new SimpleDateFormat("dd/MM/yyyy");
 
 		try {

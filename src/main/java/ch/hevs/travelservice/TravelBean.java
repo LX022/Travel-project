@@ -5,15 +5,16 @@ import static java.lang.Math.toIntExact;
 import java.util.Date;
 import java.util.List;
 
+import javax.annotation.Resource;
+import javax.annotation.security.RolesAllowed;
+import javax.ejb.SessionContext;
 import javax.ejb.Stateless;
 import javax.ejb.TransactionAttribute;
 import javax.ejb.TransactionAttributeType;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import javax.persistence.PersistenceContextType;
 import javax.persistence.Query;
 
-import ch.hevs.businessobject.Airport;
 import ch.hevs.businessobject.Arrival;
 import ch.hevs.businessobject.Departure;
 import ch.hevs.businessobject.Flight;
@@ -21,8 +22,12 @@ import ch.hevs.businessobject.Passenger;
 
 
 @Stateless
+
 public class TravelBean implements Travel{
 	
+	@Resource
+	private SessionContext ctx;
+
 	
 	@PersistenceContext(name = "TravelPU")
 	private EntityManager em;
@@ -101,14 +106,15 @@ public class TravelBean implements Travel{
 	@Override
 	public void createDeparture(String iata, String city, String country, String gate) throws Exception {
 		// TODO Auto-generated method stub
-		Departure d = new Departure();
-		d.setIata(iata);
-		d.setCity(city);
-		d.setCountry(country);
-		d.setGate(gate);
-		
-		
-		em.persist(d);
+
+			Departure d = new Departure();
+			d.setIata(iata);
+			d.setCity(city);
+			d.setCountry(country);
+			d.setGate(gate);
+						
+			em.persist(d);	
+
 	}
 
 	@Override
@@ -193,6 +199,25 @@ public class TravelBean implements Travel{
 		query.setParameter("id", id).getResultList();
 		
 		return (Flight) query.getSingleResult();
+	}
+
+	@Override
+	public Boolean isAdmin() {
+		// TODO Auto-generated method stub
+		if(ctx.isCallerInRole("admin"))
+			return true;
+		else
+			return false;
+		
+	}
+	
+	@Override
+	public Boolean isAgent() {
+		// TODO Auto-generated method stub
+		if(ctx.isCallerInRole("agent"))
+			return true;
+		else
+			return false;
 	}
 	
 }

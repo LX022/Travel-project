@@ -3,6 +3,9 @@ package ch.hevs.managedbeans;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
+import javax.annotation.Resource;
+import javax.annotation.security.RolesAllowed;
+import javax.ejb.SessionContext;
 import javax.naming.InitialContext;
 import javax.naming.NamingException;
 
@@ -22,11 +25,15 @@ public class AirportBean {
 	private List<Departure> departures;
 	private List<Arrival> arrivals;
 
+	
 	@PostConstruct
 	public void initialize() throws NamingException {
 		// use JNDI to inject reference to bank EJB
 		InitialContext ctx = new InitialContext();
 		travel = (Travel) ctx.lookup("java:global/TRAVEL-0.0.1-SNAPSHOT/TravelBean!ch.hevs.travelservice.Travel");
+		
+
+
 
 		// initialize account descriptions
 		this.iata = "iata";
@@ -36,8 +43,24 @@ public class AirportBean {
 		
 		departures = travel.getDepartures();
 		arrivals = travel.getArrivals();
+		
+		
+
 	}
 
+	public String createDepartureAirportInit() {
+
+		
+		if(travel.isAdmin()){
+			return "createDepartureAirport";
+		}else{
+			System.out.println("ljksdfaייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייייי");
+			return "welcomeTravel";
+		}
+
+	}
+	
+	
 	public String createDepartureAirport() {
 
 		try {

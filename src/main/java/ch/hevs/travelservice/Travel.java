@@ -13,6 +13,7 @@ import ch.hevs.businessobject.Passenger;
 
 @Local
 public interface Travel {
+	
 
 	List<Departure> getDepartures();
 	
@@ -23,6 +24,10 @@ public interface Travel {
 	List<Flight> getFlightsFromDepartureAndArrival(Departure departure, Arrival arrival, Date date);
 	
 	List<Passenger> getPassengers();
+	
+	Boolean isAdmin();
+	
+	Boolean isAgent();
 	
 	void createPassenger(String firstname, String lastname, String city, String zipcode) throws Exception;
 	
