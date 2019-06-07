@@ -189,9 +189,9 @@ public class TravelBean implements Travel{
 		
 		passenger.setMiles(newMiles);
 		flight.addPassenger(passenger);
-		flight.setNumberOfPassengers(flight.getNumberOfPassengers()-1);
+		//flight.setNumberOfPassengers(flight.getNumberOfPassengers()-1);
 
-		Flight realFlight = em.merge(flight);		
+		em.merge(flight);		
 	}
 
 	@Override
