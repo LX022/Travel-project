@@ -54,7 +54,7 @@ public class AirportBean {
 		if(travel.isAdmin()){
 			return "createDepartureAirport";
 		}else{
-			return "welcomeTravel";
+			return "nonAdmin";
 		}
 
 	}
@@ -65,7 +65,7 @@ public class AirportBean {
 		if(travel.isAdmin()){
 			return "createArrivalAirport";
 		}else{
-			return "welcomeTravel";
+			return "nonAdmin";
 		}
 
 	}

@@ -117,7 +117,7 @@ public class FlightBean {
 		if(travel.isAdmin()){
 			return "createFlight";
 		}else{
-			return "welcomeTravel";
+			return "nonAdmin";
 		}
 
 	}
