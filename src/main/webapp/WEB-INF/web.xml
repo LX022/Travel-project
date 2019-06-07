@@ -40,4 +40,29 @@
     <env-entry-value>am9kZXRlcHV0b2hhY2tlcg==</env-entry-value>
   </env-entry>
   <display-name>TP12-WEB-EJB-PC-EPC-DAO-E</display-name>
+  
+  <!-- THE SECURITY CONSTRAINTS -->
+	<security-constraint>
+		<web-resource-collection>
+			<web-resource-name>Secure Content</web-resource-name>
+			<url-pattern>/*</url-pattern>
+		</web-resource-collection>
+		<auth-constraint>
+			<role-name>admin</role-name>
+			<role-name>agent</role-name>
+		</auth-constraint>
+	</security-constraint>
+	<login-config>
+		<auth-method>BASIC</auth-method>
+		<realm-name>Application user</realm-name>
+	</login-config>
+	<security-role>
+		<description>admin</description>
+		<role-name>admin</role-name>
+	</security-role>
+	<security-role>
+		<description>agent</description>
+		<role-name>agent</role-name>
+	</security-role>
+  
 </web-app>
