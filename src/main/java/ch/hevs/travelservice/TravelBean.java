@@ -181,6 +181,7 @@ public class TravelBean implements Travel{
 	public void bookFlight(Passenger passenger,Flight flight) throws Exception {
 		// TODO Auto-generated method stub
 
+		int numbOfPassengers = flight.getNumberOfPassengers();
 		
 		//Correction des miles
 		int currentMiles = passenger.getMiles();
@@ -189,9 +190,11 @@ public class TravelBean implements Travel{
 		
 		passenger.setMiles(newMiles);
 		flight.addPassenger(passenger);
-		//flight.setNumberOfPassengers(flight.getNumberOfPassengers()-1);
+		flight.setNumberOfPassengers(numbOfPassengers-1);
 
-		em.merge(flight);		
+		em.merge(flight);	
+		updateNumberOfPassengers(flight);
+		
 	}
 
 	@Override
@@ -220,6 +223,14 @@ public class TravelBean implements Travel{
 			return true;
 		else
 			return false;
+	}
+
+	@Override
+	public void updateNumberOfPassengers(Flight f) {
+		// TODO Auto-generated method stub
+		int value = f.getNumberOfPassengers() -1;
+		Query query = em.createQuery("UPDATE Flight f SET f.numberOfPassengers = :value WHERE f.id = :id").setParameter("id", f.getId()).setParameter("value", value);
+			   
 	}
 	
 }

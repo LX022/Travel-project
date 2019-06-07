@@ -41,7 +41,9 @@ public interface Travel {
 	
 	void deleteDepartureFromIataArrivalAirport(String iata);
 	
-	void bookFlight(Passenger passenger,Flight flight) throws Exception;;
+	void bookFlight(Passenger passenger,Flight flight) throws Exception;
+	
+	void updateNumberOfPassengers( Flight flight);
 	
 	Flight getFlightFromNumber(String number);
 	
