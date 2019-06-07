@@ -43,6 +43,7 @@ public interface Travel {
 	
 	void updateNumberOfPassengers( Flight flight);
 	
+	
 	Flight getFlightFromNumber(String number);
 	
 	Flight getFlightFromId(Long id);

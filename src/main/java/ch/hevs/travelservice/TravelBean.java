@@ -178,11 +178,13 @@ public class TravelBean implements Travel{
 		int numbOfPassengers = flight.getNumberOfPassengers();
 		
 		//Correction des miles
+		
 		int currentMiles = passenger.getMiles();
 		long milesAdded = flight.getPrice() / 2;
 		int newMiles = currentMiles + toIntExact(milesAdded);
-		
 		passenger.setMiles(newMiles);
+		
+		
 		flight.addPassenger(passenger);
 		flight.setNumberOfPassengers(numbOfPassengers-1);
 
@@ -226,5 +228,7 @@ public class TravelBean implements Travel{
 		Query query = em.createQuery("UPDATE Flight f SET f.numberOfPassengers = :value WHERE f.id = :id").setParameter("id", f.getId()).setParameter("value", value);
 			   
 	}
+	
+
 	
 }
