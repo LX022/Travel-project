@@ -9,7 +9,7 @@
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
     <ui:define name="content">
     	<h:form>
-        	<h:outputLabel value="createFlight:"></h:outputLabel>
+        	<h:outputLabel value="Créer un vol :"></h:outputLabel>
         	
         	<table>
      			<tr>
@@ -53,6 +53,9 @@
     
      		<h:commandButton value="Enregistrer le nouveau vol" action="#{flightBean.createFlight}"></h:commandButton>
      		<br />
+     		<h:commandLink action="welcomeTravel">
+         		<h:outputText value="Retour à l'accueil" />
+         		</h:commandLink>
         </h:form>
     </ui:define>
 </ui:composition>

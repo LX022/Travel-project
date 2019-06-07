@@ -2,37 +2,45 @@
     "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-    xmlns:ui="http://java.sun.com/jsf/facelets"
-    xmlns:h="http://java.sun.com/jsf/html"
-    xmlns:f="http://java.sun.com/jsf/core">
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
 
 <ui:composition template="/WEB-INF/templates/BasicTemplate.xhtml">
-    <ui:define name="content">
-    	<h:form>
-        	<h:outputLabel value="createAirport:"></h:outputLabel>
-        	
-        	<table>
-     			<tr>
-          			<th><h:outputText value="IATA Code : "></h:outputText></th>
-          			<td><h:inputText value="#{airportBean.iata}" maxlength="50" style="width: 100px;"></h:inputText></td>
-     			</tr>
-     			<tr>
-          			<th><h:outputText value="City : "></h:outputText></th>
-          			<td><h:inputText value="#{airportBean.city}" maxlength="50" style="width: 100px;"></h:inputText></td>
-     			</tr>
-     			<tr>
-          			<th><h:outputText value="Country : "></h:outputText></th>
-          			<td><h:inputText value="#{airportBean.country}" maxlength="50" style="width: 100px;"></h:inputText></td>
-     			</tr>
-     			<tr>
-          			<th><h:outputText value="Gate : "></h:outputText></th>
-          			<td><h:inputText value="#{airportBean.gate}" maxlength="50" style="width: 100px;"></h:inputText></td>
-     			</tr>
+	<ui:define name="content">
+		<h:form>
+			<h:outputLabel value="Créer un aéroport :"></h:outputLabel>
+
+			<table>
+				<tr>
+					<th><h:outputText value="IATA Code : "></h:outputText></th>
+					<td><h:inputText value="#{airportBean.iata}" maxlength="50"
+							style="width: 100px;"></h:inputText></td>
+				</tr>
+				<tr>
+					<th><h:outputText value="City : "></h:outputText></th>
+					<td><h:inputText value="#{airportBean.city}" maxlength="50"
+							style="width: 100px;"></h:inputText></td>
+				</tr>
+				<tr>
+					<th><h:outputText value="Country : "></h:outputText></th>
+					<td><h:inputText value="#{airportBean.country}" maxlength="50"
+							style="width: 100px;"></h:inputText></td>
+				</tr>
+				<tr>
+					<th><h:outputText value="Gate : "></h:outputText></th>
+					<td><h:inputText value="#{airportBean.gate}" maxlength="50"
+							style="width: 100px;"></h:inputText></td>
+				</tr>
 			</table>
-    
-     		<h:commandButton value="Enregistrer le nouvel aéroport" action="#{airportBean.createDepartureAirport}"></h:commandButton>
-     		<br />
-        </h:form>
-    </ui:define>
+
+			<h:commandButton value="Enregistrer le nouvel aéroport"
+				action="#{airportBean.createDepartureAirport}"></h:commandButton>
+			<br />
+			<h:commandLink action="welcomeTravel">
+				<h:outputText value="Retour à l'accueil" />
+			</h:commandLink>
+		</h:form>
+	</ui:define>
 </ui:composition>
 </html>

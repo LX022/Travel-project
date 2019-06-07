@@ -266,5 +266,45 @@
 				<to-view-id>/welcomeTravel.xhtml</to-view-id>
 			</navigation-case>
 		</navigation-rule>
+		<navigation-rule>
+			<display-name>bookFlight.xhtml</display-name>
+			<from-view-id>/bookFlight.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>welcomeTravel</from-outcome>
+				<to-view-id>/welcomeTravel.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
+			<display-name>createArrivalAirport.xhtml</display-name>
+			<from-view-id>/createArrivalAirport.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>welcomeTravel</from-outcome>
+				<to-view-id>/welcomeTravel.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
+			<display-name>createDepartureAirport.xhtml</display-name>
+			<from-view-id>/createDepartureAirport.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>welcomeTravel</from-outcome>
+				<to-view-id>/welcomeTravel.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
+			<display-name>createFlight.xhtml</display-name>
+			<from-view-id>/createFlight.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>welcomeTravel</from-outcome>
+				<to-view-id>/welcomeTravel.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
+		<navigation-rule>
+			<display-name>createPassenger.xhtml</display-name>
+			<from-view-id>/createPassenger.xhtml</from-view-id>
+			<navigation-case>
+				<from-outcome>welcomeTravel</from-outcome>
+				<to-view-id>/welcomeTravel.xhtml</to-view-id>
+			</navigation-case>
+		</navigation-rule>
 
 </faces-config>
